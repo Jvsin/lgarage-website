@@ -1,3 +1,7 @@
+<script setup>
+  import OpinionsSection from '@/components/OpinionsSection.vue'
+</script>
+
 <template>
   <v-container class="py-3" fluid>
     <v-card class="hero-card pa-8 pa-md-12" rounded="lg">
@@ -91,6 +95,10 @@
           </v-hover>
         </v-col>
       </v-row>
+    </v-container>
+
+    <v-container class="py-3" fluid>
+      <OpinionsSection />
     </v-container>
 
     <v-sheet class="mt-10 pa-8" rounded="lg" variant="outlined">
