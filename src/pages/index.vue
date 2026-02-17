@@ -1,20 +1,20 @@
 <template>
   <v-container class="py-10" fluid>
-    <v-card class="hero pa-8 pa-md-12" rounded="lg">
-      <h1 class="text-h2 text-md-h1 font-weight-bold text-on-surface">
+    <v-card class="hero-card pa-8 pa-md-12" rounded="lg">
+      <h1 class="text-h2 text-md-h1 font-weight-bold text-secondary">
         GAWRYCH
       </h1>
-      <h2 class="text-h5 text-md-h4 mb-6">
+      <h2 class="text-h5 text-md-h4 mb-6 text-secondary">
         Serwis & Detaling
       </h2>
-      <h3 class="text-body-1 text-md-body-1 mb-6">
+      <h3 class="text-body-1 text-md-body-1 mb-6 text-secondary">
         Profesjonalna obsługa twojego samochodu
       </h3>
-      <h3 class="text-body-1 text-md-body-1 mb-6 font-weight-bold">
+      <h3 class="text-body-1 text-md-body-1 mb-6 font-weight-bold text-red-background">
         Od 1990 roku.
       </h3>
-      <v-btn class="mr-2" color="button" size="large">Zobacz oferte</v-btn>
-      <v-btn class="ml-2" color="button" size="large" variant="outlined">Kontakt</v-btn>
+      <v-btn class="mr-2" color="red-background" size="large">Zobacz oferte</v-btn>
+      <v-btn class="ml-2" color="secondary" size="large" variant="outlined">Kontakt</v-btn>
     </v-card>
 
     <v-row class="mt-10" dense>
@@ -59,7 +59,11 @@
 </template>
 
 <style scoped>
-  .hero {
-    background: linear-gradient(135deg, #d9d9d9, #bfbfbf);
+  .hero-card {
+    background-image: url("@/assets/garage_background1.png");
+    background-position: 50% 35%;
+    background-repeat: no-repeat;
+    background-size: 110% auto;
+    min-height: 420px;
   }
 </style>

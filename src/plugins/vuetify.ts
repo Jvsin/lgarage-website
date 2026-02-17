@@ -41,15 +41,15 @@ export default createVuetify({
       garageDark: {
         dark: true,
         colors: {
-          'primary': '#C0C0C0',
-          'secondary': '#0B0B0B',
+          'primary': '#0B0B0B',
+          'secondary': '#C0C0C0',
           'surface': '#C0C0C0',
           'background': '#0B0B0B',
           'on-primary': '#0B0B0B',
           'on-secondary': '#C0C0C0',
           'on-surface': '#0B0B0B',
           'on-background': '#C0C0C0',
-          'button': '#5d0c0c',
+          'red-background': '#5d0c0c',
           'error': '#D64545',
           'info': '#2F80ED',
           'success': '#27AE60',

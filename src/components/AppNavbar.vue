@@ -1,17 +1,17 @@
 <template>
-  <v-app-bar class="navbar" color="secondary" flat height="72">
+  <v-app-bar class="navbar" color="primary" flat height="72">
     <div class="navbar__left">
-      <v-btn class="text-none" color="button" href="/" variant="text">
+      <v-btn class="text-none" color="red-background" href="/" variant="text">
         Gawrych Serwis&Detaling
       </v-btn>
     </div>
     <div class="navbar__center d-flex ga-2">
-      <v-btn color="button" href="#sekcja-1" variant="text">Serwis</v-btn>
-      <v-btn color="button" href="#sekcja-2" variant="outlined">Detaling</v-btn>
-      <v-btn color="button" href="#sekcja-3" variant="elevated">Performence</v-btn>
+      <v-btn color="red-background" href="#sekcja-1" variant="text">Serwis</v-btn>
+      <v-btn color="red-background" href="#sekcja-2" variant="outlined">Detaling</v-btn>
+      <v-btn color="red-background" href="#sekcja-3" variant="elevated">Performence</v-btn>
     </div>
     <div class="navbar__right">
-      <v-btn color="button" href="#ogloszenia" variant="text">Ogłoszenia</v-btn>
+      <v-btn color="red-background" href="#ogloszenia" variant="text">Ogłoszenia</v-btn>
     </div>
   </v-app-bar>
 </template>
