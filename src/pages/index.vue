@@ -19,28 +19,49 @@
 
     <v-row class="mt-10" dense>
       <v-col cols="12" md="4">
-        <v-card id="sekcja-1" class="h-100" rounded="lg" variant="tonal">
-          <v-card-title class="text-h6">Sekcja 1</v-card-title>
+        <v-card
+          id="sekcja-1"
+          class="service-card h-100"
+          href="#sekcja-1"
+          link
+          rounded="lg"
+          variant="tonal"
+        >
+          <v-card-title class="text-h6">SERWIS</v-card-title>
           <v-card-text>
-            Tutaj wpisz krotki opis uslugi lub przewagi. Tekst do edycji.
+            Mechanika i diagnostyka.
           </v-card-text>
         </v-card>
       </v-col>
 
       <v-col cols="12" md="4">
-        <v-card id="sekcja-2" class="h-100" rounded="lg" variant="tonal">
-          <v-card-title class="text-h6">Sekcja 2</v-card-title>
+        <v-card
+          id="sekcja-2"
+          class="service-card h-100"
+          href="#sekcja-2"
+          link
+          rounded="lg"
+          variant="tonal"
+        >
+          <v-card-title class="text-h6">DETALING</v-card-title>
           <v-card-text>
-            Kolejne miejsce na tresc. Mozesz tu dodac np. liste uslug.
+            Folie ceramiczne, folie PPF.
           </v-card-text>
         </v-card>
       </v-col>
 
       <v-col cols="12" md="4">
-        <v-card id="sekcja-3" class="h-100" rounded="lg" variant="tonal">
-          <v-card-title class="text-h6">Sekcja 3</v-card-title>
+        <v-card
+          id="sekcja-3"
+          class="service-card h-100"
+          href="#sekcja-3"
+          link
+          rounded="lg"
+          variant="tonal"
+        >
+          <v-card-title class="text-h6">PERFORMENCE</v-card-title>
           <v-card-text>
-            Jeszcze jeden blok informacyjny. Wstaw dowolny opis.
+            Tuning i modyfikacje.
           </v-card-text>
         </v-card>
       </v-col>
@@ -65,5 +86,15 @@
     background-repeat: no-repeat;
     background-size: 110% auto;
     min-height: 420px;
+  }
+
+  .service-card {
+    cursor: pointer;
+    transition: 'red-background';
+  }
+
+  .service-card:hover {
+    background-color: var(--v-theme-red-background);
+    color: var(--v-theme-on-red-background);
   }
 </style>
