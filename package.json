@@ -16,6 +16,7 @@
     "@fontsource/roboto": "5.2.7",
     "@mdi/font": "^7.4.47",
     "firebase": "^12.9.0",
+    "leaflet": "^1.9.4",
     "mdi": "^2.2.43",
     "vue": "^3.5.28",
     "vue-router": "^4.5.1",

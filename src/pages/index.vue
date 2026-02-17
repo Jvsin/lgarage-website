@@ -1,4 +1,5 @@
 <script setup>
+  import ContactMapSection from '@/components/ContactMapSection.vue'
   import OpinionsSection from '@/components/OpinionsSection.vue'
 </script>
 
@@ -101,15 +102,7 @@
       <OpinionsSection />
     </v-container>
 
-    <v-sheet class="mt-10 pa-8" rounded="lg" variant="outlined">
-      <h2 class="text-h5 font-weight-bold mb-3">Kontakt</h2>
-      <p class="text-body-1 mb-0">
-        Telefon: 000 000 000 | Email: kontakt@lgarage.pl
-      </p>
-      <p class="text-body-2 mb-0">
-        To sa dane przykladowe. Edytuj je w tej sekcji.
-      </p>
-    </v-sheet>
+    <ContactMapSection />
   </v-container>
 </template>
 
