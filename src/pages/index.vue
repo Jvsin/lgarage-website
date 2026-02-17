@@ -88,6 +88,13 @@
     min-height: 420px;
   }
 
+  @media (max-width: 960px) {
+    .hero-card {
+      background-position: center;
+      background-size: cover;
+    }
+  }
+
   .service-card {
     cursor: pointer;
     transition: 'red-background';
