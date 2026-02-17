@@ -16,6 +16,16 @@
         Gawrych Serwis&Detaling
       </v-btn>
     </div>
+    <!-- <div class="navbar__left ml-4">
+      <v-btn
+        class="text-bold"
+        color="red-background"
+        href="/"
+        variant="text"
+      >
+        <img alt="logo" src="@/assets/logo_firm.png" style="height: 40px;">
+      </v-btn>
+    </div> -->
     <template v-if="!sm">
       <div class="navbar__right d-flex ga-2 mr-4">
         <v-btn color="red-background" href="#sekcja-1" variant="elevated">Serwis</v-btn>
