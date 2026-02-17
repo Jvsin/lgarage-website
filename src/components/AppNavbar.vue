@@ -1,6 +1,6 @@
 <script setup>
   import { useDisplay } from 'vuetify'
-  const { sm } = useDisplay()
+  const { xs, sm } = useDisplay()
 </script>
 
 <template>
@@ -26,7 +26,7 @@
         <img alt="logo" src="@/assets/logo_firm.png" style="height: 40px;">
       </v-btn>
     </div> -->
-    <template v-if="!sm">
+    <template v-if="!(sm || xs)">
       <div class="navbar__right d-flex ga-2 mr-4">
         <v-btn color="red-background" href="#sekcja-1" variant="elevated">Serwis</v-btn>
         <v-btn color="red-background" href="#sekcja-2" variant="elevated">Detaling</v-btn>
@@ -35,6 +35,26 @@
       </div>
       <!-- <div class="navbar__right">
       </div> -->
+    </template>
+    <template v-else>
+      <div class="navbar__right mr-4">
+        <v-menu location="bottom end">
+          <template #activator="{ props }">
+            <v-btn
+              v-bind="props"
+              color="red-background"
+              icon="mdi-menu"
+              variant="elevated"
+            />
+          </template>
+          <v-list density="comfortable">
+            <v-list-item href="#sekcja-1" title="Serwis" />
+            <v-list-item href="#sekcja-2" title="Detaling" />
+            <v-list-item href="#sekcja-3" title="Performence" />
+            <v-list-item href="#ogloszenia" title="Ogłoszenia" />
+          </v-list>
+        </v-menu>
+      </div>
     </template>
   </v-app-bar>
 </template>

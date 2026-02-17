@@ -18,8 +18,22 @@
       <h3 class="text-body-1 text-md-body-1 mb-6 font-weight-bold text-red-background">
         Od 1990 roku.
       </h3>
-      <v-btn class="mr-2" color="red-background" size="large">Zobacz oferte</v-btn>
-      <v-btn class="ml-2" color="secondary" size="large" variant="outlined">Kontakt</v-btn>
+      <v-row class="mt-6" dense>
+        <v-col cols="12" md="auto">
+          <v-btn color="red-background" size="large" style="width: 200px;">Zobacz ofertę</v-btn>
+        </v-col>
+        <v-col cols="12" md="auto">
+          <v-btn
+            color="secondary"
+            size="large"
+            style="width: 200px;"
+            variant="outlined"
+            @click="$vuetify.goTo('#kontakt')"
+          >
+            Kontakt
+          </v-btn>
+        </v-col>
+      </v-row>
     </v-card>
 
     <v-container class="py-3" fluid>
