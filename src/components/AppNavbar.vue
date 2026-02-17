@@ -4,21 +4,21 @@
 </script>
 
 <template>
-  <v-app-bar class="navbar" color="primary" flat height="72">
-    <div class="navbar__left">
-      <v-btn class="text-none" color="red-background" href="/" variant="text">
+  <v-app-bar class="navbar" color="primary" flat height="60">
+    <div class="navbar__left ml-4">
+      <v-btn class="text-bold" color="red-background" href="/" variant="outlined">
         Gawrych Serwis&Detaling
       </v-btn>
     </div>
     <template v-if="!sm">
-      <div class="navbar__center d-flex ga-2">
-        <v-btn color="red-background" href="#sekcja-1" variant="text">Serwis</v-btn>
-        <v-btn color="red-background" href="#sekcja-2" variant="outlined">Detaling</v-btn>
+      <div class="navbar__right d-flex ga-2 mr-4">
+        <v-btn color="red-background" href="#sekcja-1" variant="elevated">Serwis</v-btn>
+        <v-btn color="red-background" href="#sekcja-2" variant="elevated">Detaling</v-btn>
         <v-btn color="red-background" href="#sekcja-3" variant="elevated">Performence</v-btn>
+        <v-btn color="red-background" href="#ogloszenia" variant="elevated">Ogłoszenia</v-btn>
       </div>
-      <div class="navbar__right">
-        <v-btn color="red-background" href="#ogloszenia" variant="text">Ogłoszenia</v-btn>
-      </div>
+      <!-- <div class="navbar__right">
+      </div> -->
     </template>
   </v-app-bar>
 </template>

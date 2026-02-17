@@ -1,7 +1,7 @@
 <template>
-  <v-container class="py-10" fluid>
+  <v-container class="py-3" fluid>
     <v-card class="hero-card pa-8 pa-md-12" rounded="lg">
-      <h1 class="text-h2 text-md-h1 font-weight-bold text-secondary">
+      <h1 class="text-h3 text-md-h1 font-weight-bold text-secondary">
         GAWRYCH
       </h1>
       <h2 class="text-h5 text-md-h4 mb-6 text-secondary">
@@ -17,55 +17,81 @@
       <v-btn class="ml-2" color="secondary" size="large" variant="outlined">Kontakt</v-btn>
     </v-card>
 
-    <v-row class="mt-10" dense>
-      <v-col cols="12" md="4">
-        <v-card
-          id="sekcja-1"
-          class="service-card h-100"
-          href="#sekcja-1"
-          link
-          rounded="lg"
-          variant="tonal"
-        >
-          <v-card-title class="text-h6">SERWIS</v-card-title>
-          <v-card-text>
-            Mechanika i diagnostyka.
-          </v-card-text>
-        </v-card>
-      </v-col>
+    <v-container class="py-3" fluid>
+      <h2 class="my-3 text-h4 font-weight-bold text-secondary text-center">
+        Dlaczego my?
+      </h2>
+      <v-row class="my-3" dense>
+        <v-col cols="12" md="4">
+          <v-hover v-slot="{ isHovering, props }">
+            <v-card
+              v-bind="props"
+              id="sekcja-1"
+              :class="['service-card h-100', { 'service-card--hover': isHovering }]"
+              :color="isHovering ? 'red-background' : undefined"
+              href="#sekcja-1"
+              link
+              rounded="lg"
+              variant="tonal"
+            >
+              <div class="text-center">
+                <v-icon class="pt-5 mb-1" size="x-large">mdi-car-wrench</v-icon>
+                <v-card-title class="text-h6">SERWIS</v-card-title>
+                <v-card-text>
+                  Mechanika i diagnostyka.
+                </v-card-text>
+              </div>
+            </v-card>
+          </v-hover>
+        </v-col>
 
-      <v-col cols="12" md="4">
-        <v-card
-          id="sekcja-2"
-          class="service-card h-100"
-          href="#sekcja-2"
-          link
-          rounded="lg"
-          variant="tonal"
-        >
-          <v-card-title class="text-h6">DETALING</v-card-title>
-          <v-card-text>
-            Folie ceramiczne, folie PPF.
-          </v-card-text>
-        </v-card>
-      </v-col>
+        <v-col cols="12" md="4">
+          <v-hover v-slot="{ isHovering, props }">
+            <v-card
+              v-bind="props"
+              id="sekcja-2"
+              :class="['service-card h-100', { 'service-card--hover': isHovering }]"
+              :color="isHovering ? 'red-background' : undefined"
+              href="#sekcja-2"
+              link
+              rounded="lg"
+              variant="tonal"
+            >
+              <div class="text-center">
+                <v-icon class="pt-5 mb-1" size="x-large">mdi-creation</v-icon>
+                <v-card-title class="text-h6">DETALING</v-card-title>
+                <v-card-text>
+                  Folie ceramiczne, folie PPF.
+                </v-card-text>
+              </div>
+            </v-card>
+          </v-hover>
+        </v-col>
 
-      <v-col cols="12" md="4">
-        <v-card
-          id="sekcja-3"
-          class="service-card h-100"
-          href="#sekcja-3"
-          link
-          rounded="lg"
-          variant="tonal"
-        >
-          <v-card-title class="text-h6">PERFORMENCE</v-card-title>
-          <v-card-text>
-            Tuning i modyfikacje.
-          </v-card-text>
-        </v-card>
-      </v-col>
-    </v-row>
+        <v-col cols="12" md="4">
+          <v-hover v-slot="{ isHovering, props }">
+            <v-card
+              v-bind="props"
+              id="sekcja-3"
+              :class="['service-card h-100', { 'service-card--hover': isHovering }]"
+              :color="isHovering ? 'red-background' : undefined"
+              href="#sekcja-3"
+              link
+              rounded="lg"
+              variant="tonal"
+            >
+              <div class="text-center">
+                <v-icon class="pt-5 mb-1" size="x-large">mdi-speedometer</v-icon>
+                <v-card-title class="text-h6">PERFORMENCE</v-card-title>
+                <v-card-text>
+                  Tuning i modyfikacje.
+                </v-card-text>
+              </div>
+            </v-card>
+          </v-hover>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <v-sheet class="mt-10 pa-8" rounded="lg" variant="outlined">
       <h2 class="text-h5 font-weight-bold mb-3">Kontakt</h2>
@@ -97,11 +123,10 @@
 
   .service-card {
     cursor: pointer;
-    transition: 'red-background';
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .service-card:hover {
-    background-color: var(--v-theme-red-background);
+  .service-card--hover {
     color: var(--v-theme-on-red-background);
   }
 </style>
