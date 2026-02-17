@@ -12,9 +12,11 @@
     "lint": "eslint . --fix"
   },
   "dependencies": {
+    "@fontsource/montserrat": "^5.2.8",
     "@fontsource/roboto": "5.2.7",
-    "@mdi/font": "7.4.47",
+    "@mdi/font": "^7.4.47",
     "firebase": "^12.9.0",
+    "mdi": "^2.2.43",
     "vue": "^3.5.28",
     "vue-router": "^4.5.1",
     "vuetify": "^3.11.8"

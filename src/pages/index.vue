@@ -1,14 +1,17 @@
 <template>
   <v-container class="py-10" fluid>
     <v-card class="hero pa-8 pa-md-12" rounded="lg">
-      <div class="text-overline mb-2">LGarage</div>
-      <h1 class="text-h3 text-md-h2 font-weight-bold mb-3">
+      <h1 class="text-h2 text-md-h1 font-weight-bold text-on-surface">
         GAWRYCH
       </h1>
-      <p class="text-body-1 text-md-h6 mb-6">
+      <h2 class="text-h5 text-md-h4 mb-6">
         Serwis & Detaling
-      </p>
-      <v-btn color="primary" size="large">Zobacz oferte</v-btn>
+      </h2>
+      <h3 class="text-body-1 text-md-body-1 mb-6">
+        Profesjonalna obsługa twojego samochodu
+      </h3>
+      <v-btn class="mr-2" color="button" size="large">Zobacz oferte</v-btn>
+      <v-btn class="ml-2" color="button" size="large" variant="outlined">Kontakt</v-btn>
     </v-card>
 
     <v-row class="mt-10" dense>

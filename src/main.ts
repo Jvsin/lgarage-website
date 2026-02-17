@@ -9,6 +9,8 @@ import { registerPlugins } from '@/plugins'
 
 // Components
 import App from './App.vue'
+import '@fontsource/montserrat/400.css'
+import '@fontsource/montserrat/700.css'
 
 // Composables
 import { createApp } from 'vue'
