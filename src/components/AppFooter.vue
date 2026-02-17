@@ -20,9 +20,9 @@
         </div>
       </div>
       <div class="text-body-2 mt-4 mt-md-0 text-center">
-        <div>Telefon: 000 000 000</div>
-        <div>Email: kontakt@lgarage.pl</div>
-        <div>Godziny: Pon-Pt 08:00-17:00</div>
+        <div>+48 730 995 828 | +48 796 073 929</div>
+        <div>kontakt@lgarage.pl</div>
+        <div>Pon-Pt 08:00-17:00</div>
       </div>
     </v-container>
   </v-footer>

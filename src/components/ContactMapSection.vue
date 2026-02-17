@@ -32,7 +32,7 @@
       zoomControl: true,
     })
 
-    leafletMap.setView(workshopCoords, 15)
+    leafletMap.setView(workshopCoords, 10)
 
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
@@ -64,7 +64,7 @@
 <template>
   <v-container class="py-8" fluid>
     <v-row>
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="7">
         <v-card border class="h-100 pa-6 d-flex flex-column justify-center" elevation="4">
           <div class="mb-6">
             <h2 class="text-h3 font-weight-bold text-uppercase mb-1">
@@ -105,7 +105,7 @@
             <div>
               <div class="text-caption">Telefon</div>
               <div class="text-body-1">
-                <a class="text-decoration-none">+48 123 456 789</a>
+                <span class="text-decoration-none">+48 730 995 828 | +48 796 073 929</span>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@
         </v-card>
       </v-col>
 
-      <v-col cols="12" md="6">
+      <v-col cols="12" md="5">
         <v-card border class="h-100 rounded-lg overflow-hidden" elevation="4">
           <div ref="mapEl" class="map-container" />
         </v-card>
