@@ -10,6 +10,9 @@
       <h3 class="text-body-1 text-md-body-1 mb-6">
         Profesjonalna obsługa twojego samochodu
       </h3>
+      <h3 class="text-body-1 text-md-body-1 mb-6 font-weight-bold">
+        Od 1990 roku.
+      </h3>
       <v-btn class="mr-2" color="button" size="large">Zobacz oferte</v-btn>
       <v-btn class="ml-2" color="button" size="large" variant="outlined">Kontakt</v-btn>
     </v-card>
