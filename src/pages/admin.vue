@@ -1,4 +1,5 @@
 <script setup>
+  import { getAuth, signOut } from 'firebase/auth'
   import { addDoc, collection, getDocs, orderBy, query } from 'firebase/firestore'
   import { getDownloadURL, ref as storageRef, uploadBytes } from 'firebase/storage'
   import { onMounted, ref } from 'vue'
@@ -6,7 +7,6 @@
   import AddCarDialog from '@/components/AddCarDialog.vue'
   import { db, storage } from '@/firebase'
 
-  // const imageFile = ref(null) // Tu trafi plik wybrany przez Ciebie
   const uploading = ref(false)
   const router = useRouter()
   const dialogOpen = ref(false)
