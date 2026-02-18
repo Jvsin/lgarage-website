@@ -62,29 +62,65 @@
         </h2>
         <v-row class="my-3" dense>
           <v-col cols="12" md="4">
-            <v-card class="service-card h-100 pa-4" rounded="lg" variant="tonal">
-              <div class="text-center">
-                <v-icon class="mb-2" size="x-large">mdi-car-wrench</v-icon>
-                <div class="text-h6">SERWIS</div>
-              </div>
-            </v-card>
+            <v-hover v-slot="{ isHovering, props }">
+              <v-card
+                v-bind="props"
+                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
+                :color="isHovering ? 'red-background' : undefined"
+                rounded="lg"
+                variant="tonal"
+              >
+                <div class="text-center">
+                  <v-icon class="pt-2 mb-2" size="x-large">mdi-car-wrench</v-icon>
+                  <v-card-title class="text-h6">SERWIS</v-card-title>
+                  <v-card-text>
+                    Mechanika i diagnostyka.
+                  </v-card-text>
+                </div>
+              </v-card>
+            </v-hover>
           </v-col>
+
           <v-col cols="12" md="4">
-            <v-card class="service-card h-100 pa-4" rounded="lg" variant="tonal">
-              <div class="text-center">
-                <v-icon class="mb-2" size="x-large">mdi-creation</v-icon>
-                <div class="text-h6">DETAILING</div>
-              </div>
-            </v-card>
+            <v-hover v-slot="{ isHovering, props }">
+              <v-card
+                v-bind="props"
+                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
+                :color="isHovering ? 'red-background' : undefined"
+                rounded="lg"
+                variant="tonal"
+              >
+                <div class="text-center">
+                  <v-icon class="pt-2 mb-2" size="x-large">mdi-creation</v-icon>
+                  <v-card-title class="text-h6">DETAILING</v-card-title>
+                  <v-card-text>
+                    Folie ceramiczne, folie PPF.
+                  </v-card-text>
+                </div>
+              </v-card>
+            </v-hover>
           </v-col>
+
           <v-col cols="12" md="4">
-            <v-card class="service-card h-100 pa-4" rounded="lg" variant="tonal">
-              <div class="text-center">
-                <v-icon class="mb-2" size="x-large">mdi-speedometer</v-icon>
-                <div class="text-h6">PERFORMANCE</div>
-              </div>
-            </v-card>
+            <v-hover v-slot="{ isHovering, props }">
+              <v-card
+                v-bind="props"
+                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
+                :color="isHovering ? 'red-background' : undefined"
+                rounded="lg"
+                variant="tonal"
+              >
+                <div class="text-center">
+                  <v-icon class="pt-2 mb-2" size="x-large">mdi-speedometer</v-icon>
+                  <v-card-title class="text-h6">PERFORMANCE</v-card-title>
+                  <v-card-text>
+                    Tuning i modyfikacje.
+                  </v-card-text>
+                </div>
+              </v-card>
+            </v-hover>
           </v-col>
+
         </v-row>
       </v-container>
     </div>
@@ -119,5 +155,10 @@
   .service-card {
     cursor: pointer;
     transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Przywrócony styl dla tekstu po najechaniu (opcjonalny, jeśli chcesz zmienić kolor tekstu na hover) */
+  .service-card--hover {
+    color: var(--v-theme-on-red-background);
   }
 </style>
