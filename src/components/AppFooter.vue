@@ -7,14 +7,18 @@
         <div class="mt-2 d-flex ga-2 justify-center">
           <v-btn
             aria-label="Facebook"
+            href="https://www.facebook.com/GawrychSerwis?locale=pl_PL"
             icon="mdi-facebook"
             size="small"
+            target="_blank"
             variant="text"
           />
           <v-btn
             aria-label="Instagram"
+            href="https://www.instagram.com/gawrych_serwis_detailing"
             icon="mdi-instagram"
             size="small"
+            target="_blank"
             variant="text"
           />
         </div>
