@@ -9,7 +9,7 @@
   function moveTo (id) {
     goTo(id, {
       duration: 800,
-      offset: -40,
+      offset: -50,
       easing: 'easeInOutCubic',
     })
   }
@@ -18,12 +18,18 @@
 <template>
   <v-container class="py-3" fluid>
     <v-card class="hero-card pa-8 pa-md-12" rounded="lg">
-      <h1 class="text-h3 text-md-h1 font-weight-bold text-secondary">
+      <!-- <h1 class="text-h3 text-md-h1 font-weight-bold text-secondary">
         GAWRYCH
       </h1>
       <h2 class="text-h5 text-md-h4 mb-6 text-secondary">
         Serwis & Detaling
-      </h2>
+      </h2> -->
+      <v-img
+        alt="Logo Gawrych"
+        class="mb-6"
+        max-width="500"
+        src="@/assets/logo_firm_cut.png"
+      />
       <h3 class="text-body-1 text-md-body-1 mb-6 text-secondary">
         Profesjonalna obsługa twojego samochodu
       </h3>
