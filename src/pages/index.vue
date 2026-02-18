@@ -87,4 +87,13 @@
     }
   }
 
+  .service-card {
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Przywrócony styl dla tekstu po najechaniu (opcjonalny, jeśli chcesz zmienić kolor tekstu na hover) */
+  .service-card--hover {
+    color: var(--v-theme-on-red-background);
+  }
 </style>
