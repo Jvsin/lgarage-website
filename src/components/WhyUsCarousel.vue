@@ -36,8 +36,7 @@
       class="why-us-carousel"
       cycle
       height="320"
-      hide-delimiters
-      :interval="4500"
+      :interval="3500"
       show-arrows="hover"
     >
       <v-carousel-item
@@ -75,6 +74,14 @@
   .why-us-carousel {
     border-radius: 16px;
     overflow: hidden;
+  }
+
+  .why-us-carousel :deep(.v-carousel__controls) {
+    background-color: rgba(0, 0, 0, 0.55);
+  }
+
+  .why-us-carousel :deep(.v-carousel__controls .v-btn) {
+    color: #ff6b6b;
   }
 
   .carousel-tile {
