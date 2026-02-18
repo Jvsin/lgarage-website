@@ -6,14 +6,17 @@
 <template>
   <v-app-bar class="navbar" color="primary" flat height="60">
     <div class="navbar__left ml-4">
-      <v-btn
+      <!-- <v-btn
         class="text-bold"
         color="red-background"
         href="/"
         prepend-icon="mdi-garage"
-        variant="outlined"
+        variant="elevated"
       >
         Gawrych Serwis&Detaling
+      </v-btn> -->
+      <v-btn>
+        <v-icon color="red-background">mdi-home</v-icon>
       </v-btn>
     </div>
     <!-- <div class="navbar__left ml-4">

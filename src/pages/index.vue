@@ -2,6 +2,7 @@
   import { useGoTo } from 'vuetify'
   import ContactMapSection from '@/components/ContactMapSection.vue'
   import OpinionsSection from '@/components/OpinionsSection.vue'
+  import WhyUsCarousel from '@/components/WhyUsCarousel.vue'
 
   const goTo = useGoTo()
 
@@ -56,73 +57,7 @@
     </v-card>
 
     <div id="oferta">
-      <v-container class="py-3" fluid>
-        <h2 class="my-3 text-h4 font-weight-bold text-secondary text-center">
-          Dlaczego my?
-        </h2>
-        <v-row class="my-3" dense>
-          <v-col cols="12" md="4">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-card
-                v-bind="props"
-                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
-                :color="isHovering ? 'red-background' : undefined"
-                rounded="lg"
-                variant="tonal"
-              >
-                <div class="text-center">
-                  <v-icon class="pt-2 mb-2" size="x-large">mdi-car-wrench</v-icon>
-                  <v-card-title class="text-h6">SERWIS</v-card-title>
-                  <v-card-text>
-                    Mechanika i diagnostyka.
-                  </v-card-text>
-                </div>
-              </v-card>
-            </v-hover>
-          </v-col>
-
-          <v-col cols="12" md="4">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-card
-                v-bind="props"
-                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
-                :color="isHovering ? 'red-background' : undefined"
-                rounded="lg"
-                variant="tonal"
-              >
-                <div class="text-center">
-                  <v-icon class="pt-2 mb-2" size="x-large">mdi-creation</v-icon>
-                  <v-card-title class="text-h6">DETAILING</v-card-title>
-                  <v-card-text>
-                    Folie ceramiczne, folie PPF.
-                  </v-card-text>
-                </div>
-              </v-card>
-            </v-hover>
-          </v-col>
-
-          <v-col cols="12" md="4">
-            <v-hover v-slot="{ isHovering, props }">
-              <v-card
-                v-bind="props"
-                :class="['service-card h-100 pa-4', { 'service-card--hover': isHovering }]"
-                :color="isHovering ? 'red-background' : undefined"
-                rounded="lg"
-                variant="tonal"
-              >
-                <div class="text-center">
-                  <v-icon class="pt-2 mb-2" size="x-large">mdi-speedometer</v-icon>
-                  <v-card-title class="text-h6">PERFORMANCE</v-card-title>
-                  <v-card-text>
-                    Tuning i modyfikacje.
-                  </v-card-text>
-                </div>
-              </v-card>
-            </v-hover>
-          </v-col>
-
-        </v-row>
-      </v-container>
+      <WhyUsCarousel />
     </div>
 
     <v-container class="py-3" fluid>

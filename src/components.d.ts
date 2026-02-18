@@ -18,5 +18,6 @@ declare module 'vue' {
     OpinionsSection: typeof import('./components/OpinionsSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WhyUsCarousel: typeof import('./components/WhyUsCarousel.vue')['default']
   }
 }
