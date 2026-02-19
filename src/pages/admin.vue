@@ -1,38 +1,31 @@
 <script setup>
   import { getAuth, signOut } from 'firebase/auth'
-  import { addDoc, collection, getDocs, orderBy, query } from 'firebase/firestore'
-  import { getDownloadURL, ref as storageRef, uploadBytes } from 'firebase/storage'
-  import { onMounted, ref } from 'vue'
+  import { computed, onMounted, ref, watch } from 'vue'
   import { useRouter } from 'vue-router'
   import AddCarDialog from '@/components/AddCarDialog.vue'
-  import { db, storage } from '@/firebase'
+  import { useAnnouncementsStore } from '@/stores/announcements'
 
-  const uploading = ref(false)
   const router = useRouter()
   const dialogOpen = ref(false)
+  const editingCar = ref(null)
+  const announcementsStore = useAnnouncementsStore()
 
-  const cars = ref([])
-  const loadingCars = ref(true)
+  const cars = computed(() => announcementsStore.cars)
+  const loadingCars = computed(() => announcementsStore.loadingCars)
+  const uploading = computed(() => announcementsStore.savingCar)
 
   async function fetchCars () {
-    loadingCars.value = true
-    try {
-      const q = query(collection(db, 'cars'), orderBy('createdAt', 'desc'))
-      const querySnapshot = await getDocs(q)
-
-      cars.value = querySnapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data(),
-      }))
-    } catch (error) {
-      console.error(error)
-    } finally {
-      loadingCars.value = false
-    }
+    await announcementsStore.fetchCars()
   }
 
   onMounted(() => {
     fetchCars()
+  })
+
+  watch(dialogOpen, value => {
+    if (!value) {
+      editingCar.value = null
+    }
   })
 
   async function handleLogout () {
@@ -60,41 +53,36 @@
   // }
 
   async function handleSaveCar (formData) {
-    uploading.value = true
-
     try {
-      let imageUrl = ''
-      if (formData.imageFile) {
-        const fileName = `cars/${Date.now()}_${formData.imageFile.name}`
-        const fileRef = storageRef(storage, fileName)
-        const snapshot = await uploadBytes(fileRef, formData.imageFile)
-        imageUrl = await getDownloadURL(snapshot.ref)
-      }
-
-      const carData = {
-        title: formData.title,
-        year: formData.year,
-        price: formData.price,
-        description: formData.description,
-        image: imageUrl,
-        createdAt: new Date(),
-      }
-
-      const docRef = await addDoc(collection(db, 'cars'), carData)
-      console.log(docRef.id)
-      console.log('Zapisuję w bazie:', carData)
-
-      await fetchCars()
+      await (editingCar.value
+        ? announcementsStore.updateCar(editingCar.value.id, formData, editingCar.value)
+        : announcementsStore.addCar(formData))
       dialogOpen.value = false
+      editingCar.value = null
     } catch (error) {
-      console.error('Bład zapisu', error)
-    } finally {
-      uploading.value = false
+      console.error('Blad zapisu', error)
     }
   }
 
-  function changeDialogFlag () {
-    dialogOpen.value = !dialogOpen.value
+  function openCreateDialog () {
+    editingCar.value = null
+    dialogOpen.value = true
+  }
+
+  function openEditDialog (car) {
+    editingCar.value = car
+    dialogOpen.value = true
+  }
+
+  async function handleDeleteCar (car) {
+    const confirmDelete = window.confirm('Czy na pewno chcesz usunac to ogloszenie?')
+    if (!confirmDelete) return
+
+    try {
+      await announcementsStore.deleteCar(car)
+    } catch (error) {
+      console.error('Blad usuwania', error)
+    }
   }
 </script>
 
@@ -109,7 +97,7 @@
           color="red-background"
           prepend-icon="mdi-plus"
           size="large"
-          @click="changeDialogFlag"
+          @click="openCreateDialog"
         >
           Dodaj ogłoszenie
         </v-btn>
@@ -171,11 +159,21 @@
 
           <v-divider />
           <v-card-actions>
-            <v-btn color="info" prepend-icon="mdi-pencil" variant="text">
+            <v-btn
+              color="info"
+              prepend-icon="mdi-pencil"
+              variant="text"
+              @click="openEditDialog(car)"
+            >
               Edytuj
             </v-btn>
             <v-spacer />
-            <v-btn color="error" prepend-icon="mdi-delete" variant="text">
+            <v-btn
+              color="error"
+              prepend-icon="mdi-delete"
+              variant="text"
+              @click="handleDeleteCar(car)"
+            >
               Usuń
             </v-btn>
           </v-card-actions>
@@ -191,6 +189,7 @@
 
     <AddCarDialog
       v-model="dialogOpen"
+      :car="editingCar"
       :loading="uploading"
       @save="handleSaveCar"
     />

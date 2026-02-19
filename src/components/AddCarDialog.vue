@@ -7,6 +7,10 @@
   const props = defineProps({
     modelValue: Boolean,
     loading: Boolean,
+    car: {
+      type: Object,
+      default: null,
+    },
   })
 
   // 2. Emits: Co wysyłamy do rodzica?
@@ -27,11 +31,16 @@
     set: val => emit('update:modelValue', val),
   })
 
+  const isEdit = computed(() => Boolean(props.car && props.car.id))
+
+  const dialogTitle = computed(() => (isEdit.value ? 'Edytuj Samochod' : 'Dodaj Samochod'))
+  const submitLabel = computed(() => (isEdit.value ? 'Zapisz zmiany' : 'Zapisz Ogłoszenie'))
+
   const previewUrl = computed(() => {
     if (imageFile.value) {
       return URL.createObjectURL(imageFile.value)
     }
-    return ''
+    return props.car?.image || ''
   })
 
   function handleSave () {
@@ -41,8 +50,19 @@
     })
   }
 
-  watch(dialog, val => {
-    if (!val) {
+  watch([dialog, () => props.car], ([isOpen]) => {
+    if (isOpen && props.car) {
+      newCar.value = {
+        title: props.car.title || '',
+        year: props.car.year || '',
+        price: props.car.price || '',
+        description: props.car.description || '',
+      }
+      imageFile.value = null
+      return
+    }
+
+    if (!isOpen) {
       newCar.value = { title: '', year: '', price: '', description: '' }
       imageFile.value = null
     }
@@ -53,7 +73,7 @@
   <v-dialog v-model="dialog" max-width="600">
     <v-card>
       <v-card-title class="text-h5 pa-4">
-        Dodaj Samochód
+        {{ dialogTitle }}
       </v-card-title>
 
       <v-card-text>
@@ -125,7 +145,7 @@
           variant="elevated"
           @click="handleSave"
         >
-          Zapisz Ogłoszenie
+          {{ submitLabel }}
         </v-btn>
       </v-card-actions>
     </v-card>
