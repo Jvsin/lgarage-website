@@ -22,7 +22,16 @@
     title: '',
     year: '',
     price: '',
+    mileage: '',
     description: '',
+    fuel: '',
+    power: '',
+    engineCapacity: '',
+    gearbox: '',
+    origin: '',
+    drive: '',
+    contactPhone: '',
+    listingUrl: '',
   })
   const imageFile = ref(null)
 
@@ -33,8 +42,8 @@
 
   const isEdit = computed(() => Boolean(props.car && props.car.id))
 
-  const dialogTitle = computed(() => (isEdit.value ? 'Edytuj Samochod' : 'Dodaj Samochod'))
-  const submitLabel = computed(() => (isEdit.value ? 'Zapisz zmiany' : 'Zapisz Ogłoszenie'))
+  const dialogTitle = computed(() => (isEdit.value ? 'Edytuj Samochód' : 'Dodaj Samochód'))
+  const submitLabel = computed(() => (isEdit.value ? 'Zapisz zmiany' : 'Dodaj ogłoszenie'))
 
   const previewUrl = computed(() => {
     if (imageFile.value) {
@@ -56,14 +65,37 @@
         title: props.car.title || '',
         year: props.car.year || '',
         price: props.car.price || '',
+        mileage: props.car.mileage || '',
         description: props.car.description || '',
+        fuel: props.car.fuel || '',
+        power: props.car.power || '',
+        engineCapacity: props.car.engineCapacity || '',
+        gearbox: props.car.gearbox || '',
+        origin: props.car.origin || '',
+        drive: props.car.drive || '',
+        contactPhone: props.car.contactPhone || '',
+        listingUrl: props.car.listingUrl || '',
       }
       imageFile.value = null
       return
     }
 
     if (!isOpen) {
-      newCar.value = { title: '', year: '', price: '', description: '' }
+      newCar.value = {
+        title: '',
+        year: '',
+        price: '',
+        mileage: '',
+        description: '',
+        fuel: '',
+        power: '',
+        engineCapacity: '',
+        gearbox: '',
+        origin: '',
+        drive: '',
+        contactPhone: '',
+        listingUrl: '',
+      }
       imageFile.value = null
     }
   })
@@ -84,7 +116,7 @@
         />
 
         <v-row>
-          <v-col cols="6">
+          <v-col cols="4">
             <v-text-field
               v-model="newCar.year"
               label="Rocznik"
@@ -92,10 +124,19 @@
               variant="outlined"
             />
           </v-col>
-          <v-col cols="6">
+          <v-col cols="4">
             <v-text-field
               v-model="newCar.price"
               label="Cena (PLN)"
+              type="number"
+              variant="outlined"
+            />
+          </v-col>
+
+          <v-col cols="4">
+            <v-text-field
+              v-model="newCar.mileage"
+              label="km"
               type="number"
               variant="outlined"
             />
@@ -108,6 +149,76 @@
           rows="3"
           variant="outlined"
         />
+
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.fuel"
+              label="Paliwo"
+              variant="outlined"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.power"
+              label="Moc (KM)"
+              type="number"
+              variant="outlined"
+            />
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.engineCapacity"
+              label="Pojemność silnika (cm3)"
+              type="number"
+              variant="outlined"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.gearbox"
+              label="Skrzynia biegow"
+              variant="outlined"
+            />
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.origin"
+              label="Pochodzenie"
+              variant="outlined"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.drive"
+              label="Naped"
+              variant="outlined"
+            />
+          </v-col>
+        </v-row>
+
+        <v-row>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.contactPhone"
+              label="Numer kontaktowy"
+              variant="outlined"
+            />
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-text-field
+              v-model="newCar.listingUrl"
+              label="Dodatkowy link do ogloszenia"
+              variant="outlined"
+            />
+          </v-col>
+        </v-row>
 
         <v-file-input
           v-model="imageFile"

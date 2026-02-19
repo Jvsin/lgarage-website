@@ -22,7 +22,16 @@ type CarInput = {
   title: string
   year: string | number
   price: string | number
+  mileage: string | number
   description: string
+  fuel?: string
+  power?: string | number
+  engineCapacity?: string | number
+  gearbox?: string
+  origin?: string
+  drive?: string
+  contactPhone?: string
+  listingUrl?: string
   imageFile?: File | null
 }
 
@@ -31,7 +40,16 @@ type CarRecord = {
   title?: string
   year?: number | string
   price?: number | string
+  mileage: string | number
   description?: string
+  fuel?: string
+  power?: number | string
+  engineCapacity?: number | string
+  gearbox?: string
+  origin?: string
+  drive?: string
+  contactPhone?: string
+  listingUrl?: string
   image?: string
   imagePath?: string
 }
@@ -111,7 +129,16 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
         title: formData.title,
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
+        mileage: toNumberOrNull(formData.mileage),
         description: formData.description,
+        fuel: formData.fuel || '',
+        power: toNumberOrNull(formData.power),
+        engineCapacity: toNumberOrNull(formData.engineCapacity),
+        gearbox: formData.gearbox || '',
+        origin: formData.origin || '',
+        drive: formData.drive || '',
+        contactPhone: formData.contactPhone || '',
+        listingUrl: formData.listingUrl || '',
         image: imageUrl,
         imagePath,
         createdAt: new Date(),
@@ -145,7 +172,16 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
         title: formData.title,
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
+        mileage: toNumberOrNull(formData.mileage),
         description: formData.description,
+        fuel: formData.fuel || '',
+        power: toNumberOrNull(formData.power),
+        engineCapacity: toNumberOrNull(formData.engineCapacity),
+        gearbox: formData.gearbox || '',
+        origin: formData.origin || '',
+        drive: formData.drive || '',
+        contactPhone: formData.contactPhone || '',
+        listingUrl: formData.listingUrl || '',
         image: imageUrl,
         imagePath,
         updatedAt: new Date(),

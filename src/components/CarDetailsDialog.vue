@@ -42,25 +42,105 @@
       />
 
       <v-card-text class="pt-6">
-        <div class="d-flex align-center mb-6">
-          <span class="text-h4 font-weight-bold text-red">
-            {{ car.price?.toLocaleString() }} PLN
-          </span>
-          <v-chip class="ml-4 font-weight-bold text-white" color="white" variant="outlined">
-            Rok: {{ car.year }}
-          </v-chip>
+        <div class="mb-6">
+          <v-row align="center">
+            <v-col cols="12" sm="4">
+              <span class="text-h4 font-weight-bold text-red">
+                {{ car.price?.toLocaleString() }} PLN
+              </span>
+            </v-col>
+
+            <v-col class="d-flex align-center justify-start justify-sm-end flex-wrap ga-2" cols="12" sm="8">
+              <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                Rok: {{ car.year }}
+              </v-chip>
+
+              <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                Przebieg: {{ car.mileage }} km
+              </v-chip>
+            </v-col>
+          </v-row>
         </div>
 
-        <v-divider class="mb-4 border-opacity-100" />
+        <v-divider class="my-2 border-opacity-50" />
+
+        <h3 class="text-h6 font-weight-bold my-2">Szczegóły:</h3>
+        <v-row class="text-body-1">
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-gas-station" />
+            <div><span class="text-grey-lighten-1">Paliwo:</span> <strong>{{ car.fuel || '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-engine-outline" />
+            <div><span class="text-grey-lighten-1">Moc:</span> <strong>{{ car.power ? car.power + ' KM' : '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-car-coolant-level" />
+            <div><span class="text-grey-lighten-1">Pojemność silnika:</span> <strong>{{ car.engineCapacity ? car.engineCapacity + ' cm3' : '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-car-shift-pattern" />
+            <div><span class="text-grey-lighten-1">Skrzynia biegów:</span> <strong>{{ car.gearbox || '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-car-cog" />
+            <div><span class="text-grey-lighten-1">Napęd:</span> <strong>{{ car.drive || '-' }}</strong></div>
+          </v-col>
+        </v-row>
+
+        <v-divider class="my-2 border-opacity-50" />
+
+        <h3 class="text-h6 font-weight-bold my-2">Informacje:</h3>
+        <v-row class="text-body-1">
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-earth" />
+            <div><span class="text-grey-lighten-1">Pochodzenie:</span> <strong>{{ car.origin || '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-phone" />
+            <div><span class="text-grey-lighten-1">Kontakt:</span> <strong>{{ car.contactPhone || '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center text-truncate" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-link-variant" />
+            <div class="text-truncate">
+              <span class="text-grey-lighten-1">Ogłoszenie: </span>
+              <span v-if="car.listingUrl">
+                <a class="text-white font-weight-bold" :href="car.listingUrl" rel="noopener" target="_blank">
+                  Otwórz link
+                </a>
+              </span>
+              <strong v-else>-</strong>
+            </div>
+          </v-col>
+        </v-row>
+
+        <v-divider class="my-3 border-opacity-50" />
 
         <h3 class="text-h6 font-weight-bold mb-2">Opis pojazdu:</h3>
-        <p class="text-body-1" style="white-space: pre-wrap;">
+        <p class="text-body-1 text-grey-lighten-2" style="white-space: pre-wrap; line-height: 1.6;">
           {{ car.description || 'Brak opisu dla tego pojazdu.' }}
         </p>
       </v-card-text>
 
       <v-card-actions class="pa-4 bg-black">
         <v-spacer />
+        <v-btn
+          v-if="car.contactPhone"
+          class="mr-2"
+          color="white"
+          :href="`tel:${car.contactPhone}`"
+          prepend-icon="mdi-phone"
+          variant="outlined"
+        >
+          Zadzwoń
+        </v-btn>
+
         <v-btn
           color="red-background"
           variant="elevated"
@@ -69,7 +149,6 @@
           Zamknij
         </v-btn>
       </v-card-actions>
-
     </v-card>
   </v-dialog>
 </template>

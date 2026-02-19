@@ -55,10 +55,25 @@
           </v-card-title>
 
           <v-card-subtitle class="opacity-100 mb-2">
-            <span class="text-red-background font-weight-bold text-h5">
-              {{ car.price?.toLocaleString() }} PLN
-            </span>
-            <span class="ms-2 text-medium-emphasis text-body-1">Rok: {{ car.year }}</span>
+            <div class="mb-2">
+              <v-row align="center">
+                <v-col cols="12" sm="4">
+                  <span class="text-h4 font-weight-bold text-red">
+                    {{ car.price?.toLocaleString() }} PLN
+                  </span>
+                </v-col>
+
+                <v-col class="d-flex align-center justify-start justify-sm-end flex-wrap ga-2" cols="12" sm="8">
+                  <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                    Rok: {{ car.year }}
+                  </v-chip>
+
+                  <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                    Przebieg: {{ car.mileage.toLocaleString() }} km
+                  </v-chip>
+                </v-col>
+              </v-row>
+            </div>
           </v-card-subtitle>
 
           <v-card-actions class="px-4 pb-4">
