@@ -1,5 +1,5 @@
 <script setup>
-  import { computed } from 'vue'
+  import { computed, ref, watch } from 'vue'
 
   const props = defineProps({
     modelValue: Boolean,
@@ -14,6 +14,33 @@
   const dialog = computed({
     get: () => props.modelValue,
     set: val => emit('update:modelValue', val),
+  })
+
+  const imageIndex = ref(0)
+
+  const imageList = computed(() => {
+    if (!props.car) return []
+    if (props.car.images?.length) return props.car.images
+    if (props.car.image) return [props.car.image]
+    return ['https://via.placeholder.com/800x400?text=Brak+zdjęcia']
+  })
+
+  const activeImage = computed(() => imageList.value[imageIndex.value] || imageList.value[0])
+
+  const hasMultipleImages = computed(() => imageList.value.length > 1)
+
+  function showNextImage () {
+    if (!hasMultipleImages.value) return
+    imageIndex.value = (imageIndex.value + 1) % imageList.value.length
+  }
+
+  function showPreviousImage () {
+    if (!hasMultipleImages.value) return
+    imageIndex.value = (imageIndex.value - 1 + imageList.value.length) % imageList.value.length
+  }
+
+  watch(() => props.car, () => {
+    imageIndex.value = 0
   })
 </script>
 
@@ -38,8 +65,28 @@
         class="bg-grey-lighten-2 align-end"
         cover
         height="400"
-        :src="car.image || 'https://via.placeholder.com/800x400?text=Brak+zdjęcia'"
+        :src="activeImage"
       >
+        <v-btn
+          v-if="hasMultipleImages"
+          class="position-absolute"
+          color="black"
+          icon="mdi-chevron-left"
+          size="small"
+          style="left: 12px; top: 50%; transform: translateY(-50%);"
+          variant="flat"
+          @click="showPreviousImage"
+        />
+        <v-btn
+          v-if="hasMultipleImages"
+          class="position-absolute"
+          color="black"
+          icon="mdi-chevron-right"
+          size="small"
+          style="right: 12px; top: 50%; transform: translateY(-50%);"
+          variant="flat"
+          @click="showNextImage"
+        />
         <div class="w-100 px-4 pb-4 pt-15" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
           <h2 class="text-h3 font-weight-bold text-white">
             {{ car.title }}
@@ -117,7 +164,7 @@
             <div class="text-truncate">
               <span class="text-grey-lighten-1">Ogłoszenie: </span>
               <span v-if="car.listingUrl">
-                <a class="text-white font-weight-bold" :href="car.listingUrl" rel="noopener" target="_blank">
+                <a class="text-white font-weight-bold" :href="car.listingUrl.startsWith('http') ? car.listingUrl : `https://${car.listingUrl}`" rel="noopener" target="_blank">
                   Otwórz link
                 </a>
               </span>

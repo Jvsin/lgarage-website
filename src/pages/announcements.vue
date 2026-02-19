@@ -47,7 +47,7 @@
             class="bg-grey-lighten-2"
             cover
             height="250"
-            :src="car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
+            :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
           />
 
           <v-card-title class="font-weight-bold text-secondary text-h5 mt-2">

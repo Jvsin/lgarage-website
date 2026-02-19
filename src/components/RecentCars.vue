@@ -45,7 +45,7 @@
             cover
             height="200"
             max-height="200"
-            :src="car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
+            :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
           />
 
           <v-card-title class="font-weight-bold text-secondary mt-2">
@@ -53,10 +53,25 @@
           </v-card-title>
 
           <v-card-subtitle class="opacity-100 mb-2">
-            <span class="text-red-background font-weight-bold text-h6">
-              {{ car.price?.toLocaleString() }} PLN
-            </span>
-            <span class="ms-2 text-medium-emphasis">({{ car.year }})</span>
+            <div class="mb-6">
+              <v-row align="center">
+                <v-col cols="12" sm="4">
+                  <span class="text-h5 font-weight-bold text-red">
+                    {{ car.price?.toLocaleString() }} PLN
+                  </span>
+                </v-col>
+
+                <v-col class="d-flex align-center justify-start justify-sm-end flex-wrap ga-2" cols="12" sm="8">
+                  <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
+                    Rok: {{ car.year }}
+                  </v-chip>
+
+                  <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
+                    Przebieg: {{ car.mileage.toLocaleString() }} km
+                  </v-chip>
+                </v-col>
+              </v-row>
+            </div>
           </v-card-subtitle>
 
           <!-- <v-card-text class="text-secondary text-truncate">

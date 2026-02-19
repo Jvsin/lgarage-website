@@ -32,7 +32,7 @@ type CarInput = {
   drive?: string
   contactPhone?: string
   listingUrl?: string
-  imageFile?: File | null
+  imageFiles?: File[] | null
 }
 
 type CarRecord = {
@@ -40,7 +40,7 @@ type CarRecord = {
   title?: string
   year?: number | string
   price?: number | string
-  mileage: string | number
+  mileage?: string | number
   description?: string
   fuel?: string
   power?: number | string
@@ -51,7 +51,9 @@ type CarRecord = {
   contactPhone?: string
   listingUrl?: string
   image?: string
+  images?: string[]
   imagePath?: string
+  imagePaths?: string[]
 }
 
 function toNumberOrNull (value: string | number | null | undefined) {
@@ -63,29 +65,42 @@ function toNumberOrNull (value: string | number | null | undefined) {
   return Number.isNaN(parsed) ? null : parsed
 }
 
-async function uploadCarImage (imageFile: File) {
-  const fileName = `cars/${Date.now()}_${imageFile.name}`
-  const fileRef = storageRef(storage, fileName)
-  const snapshot = await uploadBytes(fileRef, imageFile)
-  const imageUrl = await getDownloadURL(snapshot.ref)
+async function uploadCarImages (imageFiles: File[], carId: string) {
+  const uploads = imageFiles.map(async (imageFile, index) => {
+    const fileName = `cars/${carId}/${Date.now()}_${index}_${imageFile.name}`
+    const fileRef = storageRef(storage, fileName)
+    const snapshot = await uploadBytes(fileRef, imageFile)
+    const imageUrl = await getDownloadURL(snapshot.ref)
+
+    return {
+      imageUrl,
+      imagePath: fileName,
+    }
+  })
+
+  const results = await Promise.all(uploads)
 
   return {
-    imageUrl,
-    imagePath: fileName,
+    imageUrls: results.map(result => result.imageUrl),
+    imagePaths: results.map(result => result.imagePath),
   }
 }
 
-async function deleteCarImage (imagePath?: string, imageUrl?: string) {
+async function deleteCarImages (imagePaths?: string[], imageUrls?: string[]) {
+  const paths = (imagePaths || []).filter(Boolean)
+  const urls = (imageUrls || []).filter(Boolean)
+
   try {
-    if (imagePath) {
-      await deleteObject(storageRef(storage, imagePath))
+    if (paths.length > 0) {
+      await Promise.all(paths.map(path => deleteObject(storageRef(storage, path))))
       return
     }
-    if (imageUrl) {
-      await deleteObject(storageRef(storage, imageUrl))
+
+    if (urls.length > 0) {
+      await Promise.all(urls.map(url => deleteObject(storageRef(storage, url))))
     }
   } catch (error) {
-    console.error('Blad usuwania zdjecia', error)
+    console.error('Blad usuwania zdjec', error)
   }
 }
 
@@ -116,15 +131,6 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     savingCar.value = true
 
     try {
-      let imageUrl = ''
-      let imagePath = ''
-
-      if (formData.imageFile) {
-        const uploadResult = await uploadCarImage(formData.imageFile)
-        imageUrl = uploadResult.imageUrl
-        imagePath = uploadResult.imagePath
-      }
-
       const carData = {
         title: formData.title,
         year: toNumberOrNull(formData.year),
@@ -139,12 +145,27 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
         drive: formData.drive || '',
         contactPhone: formData.contactPhone || '',
         listingUrl: formData.listingUrl || '',
-        image: imageUrl,
-        imagePath,
+        image: '',
+        images: [],
+        imagePath: '',
+        imagePaths: [],
         createdAt: new Date(),
       }
 
-      await addDoc(collection(db, 'cars'), carData)
+      const docRef = await addDoc(collection(db, 'cars'), carData)
+      const imageFiles = formData.imageFiles || []
+
+      if (imageFiles.length > 0) {
+        const uploadResult = await uploadCarImages(imageFiles, docRef.id)
+        const mainImage = uploadResult.imageUrls[0] || ''
+
+        await updateDoc(doc(db, 'cars', docRef.id), {
+          image: mainImage,
+          images: uploadResult.imageUrls,
+          imagePath: uploadResult.imagePaths[0] || '',
+          imagePaths: uploadResult.imagePaths,
+        })
+      }
       await fetchCars()
     } catch (error) {
       console.error('Blad zapisu', error)
@@ -158,15 +179,18 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     savingCar.value = true
 
     try {
-      let imageUrl = existingCar?.image || ''
-      let imagePath = existingCar?.imagePath || ''
+      const imageFiles = formData.imageFiles || []
+      let imageUrls = existingCar?.images || (existingCar?.image ? [existingCar.image] : [])
+      let imagePaths = existingCar?.imagePaths || (existingCar?.imagePath ? [existingCar.imagePath] : [])
 
-      if (formData.imageFile) {
-        await deleteCarImage(existingCar?.imagePath, existingCar?.image)
-        const uploadResult = await uploadCarImage(formData.imageFile)
-        imageUrl = uploadResult.imageUrl
-        imagePath = uploadResult.imagePath
+      if (imageFiles.length > 0) {
+        await deleteCarImages(imagePaths, imageUrls)
+        const uploadResult = await uploadCarImages(imageFiles, carId)
+        imageUrls = uploadResult.imageUrls
+        imagePaths = uploadResult.imagePaths
       }
+
+      const mainImage = imageUrls[0] || ''
 
       const updateData = {
         title: formData.title,
@@ -182,8 +206,10 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
         drive: formData.drive || '',
         contactPhone: formData.contactPhone || '',
         listingUrl: formData.listingUrl || '',
-        image: imageUrl,
-        imagePath,
+        image: mainImage,
+        images: imageUrls,
+        imagePath: imagePaths[0] || '',
+        imagePaths,
         updatedAt: new Date(),
       }
 
@@ -201,7 +227,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     deletingCar.value = true
 
     try {
-      await deleteCarImage(car.imagePath, car.image)
+      await deleteCarImages(car.imagePaths, car.images || (car.image ? [car.image] : []))
       await deleteDoc(doc(db, 'cars', car.id))
       cars.value = cars.value.filter(item => item.id !== car.id)
     } catch (error) {

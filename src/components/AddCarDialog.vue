@@ -33,7 +33,7 @@
     contactPhone: '',
     listingUrl: '',
   })
-  const imageFile = ref(null)
+  const imageFiles = ref([])
 
   const dialog = computed({
     get: () => props.modelValue,
@@ -46,16 +46,16 @@
   const submitLabel = computed(() => (isEdit.value ? 'Zapisz zmiany' : 'Dodaj ogłoszenie'))
 
   const previewUrl = computed(() => {
-    if (imageFile.value) {
-      return URL.createObjectURL(imageFile.value)
+    if (imageFiles.value.length > 0) {
+      return URL.createObjectURL(imageFiles.value[0])
     }
-    return props.car?.image || ''
+    return props.car?.images?.[0] || props.car?.image || ''
   })
 
   function handleSave () {
     emit('save', {
       ...newCar.value,
-      imageFile: imageFile.value,
+      imageFiles: imageFiles.value,
     })
   }
 
@@ -76,7 +76,7 @@
         contactPhone: props.car.contactPhone || '',
         listingUrl: props.car.listingUrl || '',
       }
-      imageFile.value = null
+      imageFiles.value = []
       return
     }
 
@@ -96,7 +96,7 @@
         contactPhone: '',
         listingUrl: '',
       }
-      imageFile.value = null
+      imageFiles.value = []
     }
   })
 </script>
@@ -221,10 +221,11 @@
         </v-row>
 
         <v-file-input
-          v-model="imageFile"
+          v-model="imageFiles"
           accept="image/*"
           class="mb-2"
-          label="Zdjęcie główne"
+          label="Zdjecia (pierwsze jako glowne)"
+          multiple
           prepend-icon="mdi-camera"
           show-size
           truncate-length="20"
@@ -232,7 +233,7 @@
         />
 
         <v-img
-          v-if="imageFile"
+          v-if="previewUrl"
           class="mb-4 rounded border"
           cover
           height="200"
