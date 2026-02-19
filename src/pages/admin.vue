@@ -3,11 +3,14 @@
   import { computed, onMounted, ref, watch } from 'vue'
   import { useRouter } from 'vue-router'
   import AddCarDialog from '@/components/AddCarDialog.vue'
+  import AnnouncementCard from '@/components/AnnouncementCard.vue'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
   const router = useRouter()
   const dialogOpen = ref(false)
   const editingCar = ref(null)
+  const confirmDelete = ref(false)
+  const carToDelete = ref(null)
   const announcementsStore = useAnnouncementsStore()
 
   const cars = computed(() => announcementsStore.cars)
@@ -74,14 +77,25 @@
     dialogOpen.value = true
   }
 
-  async function handleDeleteCar (car) {
-    const confirmDelete = window.confirm('Czy na pewno chcesz usunac to ogloszenie?')
-    if (!confirmDelete) return
+  function openConfirmDelete (car) {
+    carToDelete.value = car
+    confirmDelete.value = true
+  }
+
+  function closeConfirmDelete () {
+    confirmDelete.value = false
+    carToDelete.value = null
+  }
+
+  async function handleDeleteCar () {
+    if (!carToDelete.value) return
 
     try {
-      await announcementsStore.deleteCar(car)
+      await announcementsStore.deleteCar(carToDelete.value)
     } catch (error) {
       console.error('Blad usuwania', error)
+    } finally {
+      closeConfirmDelete()
     }
   }
 </script>
@@ -132,52 +146,11 @@
         md="4"
         sm="6"
       >
-        <v-card class="h-100 d-flex flex-column">
-          <v-img
-            class="bg-grey-lighten-2"
-            cover
-            height="200"
-            :src="car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
-          />
-
-          <v-card-title class="font-weight-bold">
-            {{ car.title }}
-          </v-card-title>
-
-          <v-card-subtitle class="opacity-100 mb-2">
-            <span class="text-primary font-weight-bold text-h6">
-              {{ car.price?.toLocaleString() }} PLN
-            </span>
-            <span class="ms-2 text-medium-emphasis">({{ car.year }})</span>
-          </v-card-subtitle>
-
-          <v-card-text>
-            {{ car.description?.substring(0, 100) }}...
-          </v-card-text>
-
-          <v-spacer />
-
-          <v-divider />
-          <v-card-actions>
-            <v-btn
-              color="info"
-              prepend-icon="mdi-pencil"
-              variant="text"
-              @click="openEditDialog(car)"
-            >
-              Edytuj
-            </v-btn>
-            <v-spacer />
-            <v-btn
-              color="error"
-              prepend-icon="mdi-delete"
-              variant="text"
-              @click="handleDeleteCar(car)"
-            >
-              Usuń
-            </v-btn>
-          </v-card-actions>
-        </v-card>
+        <AnnouncementCard
+          :car="car"
+          @delete="openConfirmDelete"
+          @edit="openEditDialog"
+        />
       </v-col>
     </v-row>
 
@@ -193,6 +166,25 @@
       :loading="uploading"
       @save="handleSaveCar"
     />
+
+    <v-dialog v-model="confirmDelete" width="auto">
+      <v-card
+        prepend-icon="mdi-delete"
+        title="Potwierdź usunięcie ogłoszenia"
+      >
+        <v-card-text>
+          {{ carToDelete?.title }}
+        </v-card-text>
+        <v-card-actions>
+          <v-btn color="red-background" variant="elevated" @click="handleDeleteCar">
+            Potwierdź
+          </v-btn>
+          <v-btn color="primary" variant="outlined" @click="closeConfirmDelete">
+            Anuluj
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
   </v-container>
 </template>

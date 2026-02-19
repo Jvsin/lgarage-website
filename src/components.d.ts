@@ -12,6 +12,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AddCarDialog: typeof import('./components/AddCarDialog.vue')['default']
+    AnnouncementCard: typeof import('./components/AnnouncementCard.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppNavbar: typeof import('./components/AppNavbar.vue')['default']
     ContactMapSection: typeof import('./components/ContactMapSection.vue')['default']
