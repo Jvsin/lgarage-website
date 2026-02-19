@@ -44,7 +44,7 @@
             <v-list-item-title class="text-secondary">Performence</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="#ogloszenia" link>
+          <v-list-item link to="/announcements">
             <v-list-item-title class="text-secondary">Ogłoszenia</v-list-item-title>
           </v-list-item>
 

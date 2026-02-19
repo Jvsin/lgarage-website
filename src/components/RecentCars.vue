@@ -12,7 +12,7 @@
 </script>
 
 <template>
-  <v-container class="py-6" fluid>
+  <v-container v-if="recentCars.length > 0" class="py-6" fluid>
     <h2 class="text-h4 font-weight-bold text-secondary text-center mb-6">
       Ogłoszenia aut
     </h2>
