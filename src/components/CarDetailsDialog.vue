@@ -26,20 +26,26 @@
       rounded="lg"
       theme="dark"
     >
-      <v-toolbar color="transparent" flat>
+      <!-- <v-toolbar color="transparent" flat>
         <v-toolbar-title class="text-h5 font-weight-bold text-white">
           {{ car.title }}
         </v-toolbar-title>
         <v-spacer />
         <v-btn class="text-white" icon="mdi-close" variant="text" @click="dialog = false" />
-      </v-toolbar>
+      </v-toolbar> -->
 
       <v-img
-        class="bg-grey-lighten-2"
+        class="bg-grey-lighten-2 align-end"
         cover
         height="400"
         :src="car.image || 'https://via.placeholder.com/800x400?text=Brak+zdjęcia'"
-      />
+      >
+        <div class="w-100 px-4 pb-4 pt-15" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+          <h2 class="text-h3 font-weight-bold text-white">
+            {{ car.title }}
+          </h2>
+        </div>
+      </v-img>
 
       <v-card-text class="pt-6">
         <div class="mb-6">
@@ -56,7 +62,7 @@
               </v-chip>
 
               <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
-                Przebieg: {{ car.mileage }} km
+                Przebieg: {{ car.mileage.toLocaleString() }} km
               </v-chip>
             </v-col>
           </v-row>
