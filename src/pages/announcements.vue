@@ -19,7 +19,7 @@
 </script>
 
 <template>
-  <v-container class="py-8">
+  <v-container class="py-8" fluid>
     <v-btn class="mb-4 text-secondary" prepend-icon="mdi-arrow-left" to="/" variant="text">
       Wróć na stronę główną
     </v-btn>
