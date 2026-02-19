@@ -1,8 +1,17 @@
 <script setup>
-  import { onMounted } from 'vue'
+  import { onMounted, ref } from 'vue'
+  import CarDetailsDialog from '@/components/CarDetailsDialog.vue'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
   const store = useAnnouncementsStore()
+
+  const isDialogOpen = ref(false)
+  const selectedCar = ref(null)
+
+  function openCarDetails (car) {
+    selectedCar.value = car
+    isDialogOpen.value = true
+  }
 
   onMounted(() => {
     store.fetchCars()
@@ -52,11 +61,28 @@
             <span class="ms-2 text-medium-emphasis text-body-1">Rok: {{ car.year }}</span>
           </v-card-subtitle>
 
-          <v-card-text class="text-secondary text-body-1">
+          <v-card-actions class="px-4 pb-4">
+            <v-btn
+              block
+              color="secondary"
+              prepend-icon="mdi-information-outline"
+              variant="outlined"
+              @click="openCarDetails(car)"
+            >
+              Zobacz szczegóły
+            </v-btn>
+
+          </v-card-actions>
+          <!-- <v-card-text class="text-secondary text-body-1">
             {{ car.description }}
-          </v-card-text>
+          </v-card-text> -->
         </v-card>
       </v-col>
     </v-row>
+
+    <CarDetailsDialog
+      v-model="isDialogOpen"
+      :car="selectedCar"
+    />
   </v-container>
 </template>

@@ -44,6 +44,7 @@
             class="bg-grey-lighten-2"
             cover
             height="200"
+            max-height="200"
             :src="car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
           />
 
@@ -58,9 +59,9 @@
             <span class="ms-2 text-medium-emphasis">({{ car.year }})</span>
           </v-card-subtitle>
 
-          <v-card-text class="text-secondary text-truncate">
+          <!-- <v-card-text class="text-secondary text-truncate">
             {{ car.description }}
-          </v-card-text>
+          </v-card-text> -->
         </v-card>
       </v-col>
     </v-row>
