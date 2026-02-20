@@ -5,18 +5,21 @@
       title: 'SERWIS',
       description: 'Mechanika i diagnostyka.',
       image: 'serwis.png',
+      link: '/service',
     },
     {
       icon: 'mdi-creation',
       title: 'DETAILING',
       description: 'Folie ceramiczne, folie PPF.',
       image: 'detaling.png',
+      link: '/detaling',
     },
     {
       icon: 'mdi-speedometer',
       title: 'PERFORMANCE',
       description: 'Tuning i modyfikacje.',
       image: 'performance.png',
+      link: '/performance',
     },
   ]
 
@@ -60,7 +63,7 @@
             <div class="text-body-1 mb-6">
               {{ slide.description }}
             </div>
-            <v-btn class="text-secondary" color="red-background" size="large">
+            <v-btn class="text-secondary" color="red-background" size="large" :to="slide.link">
               Zobacz
             </v-btn>
           </div>
