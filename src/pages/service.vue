@@ -22,8 +22,20 @@
       </v-container>
     </v-img>
 
-    <v-container class="py-16">
+    <v-container class="py-8 px-4 px-md-16" fluid>
       <v-row class="align-center">
+        <v-col class="pl-md-12" cols="12" md="6">
+          <div class="my-6 text-center">
+            <h2 class="text-h4 text-center font-weight-bold text-secondary mb-4 d-flex justify-center align-center">
+              <v-icon class="mr-4 flex-shrink-0" color="red" icon="mdi-cards-heart" size="36" />
+              Precyzja i pasja
+            </h2>
+            <p class="text-body-1 text-secondary" style="line-height: 1.8;">
+              Łączymy doświadczenie z nowoczesną technologią, precyzję z pasją, a profesjonalizm z indywidualnym podejściem do każdego klienta. Bo dla nas serwis to coś więcej niż naprawa – to troska o Twoją mobilność, komfort i niezawodność każdego dnia.
+            </p>
+          </div>
+        </v-col>
+
         <v-col class="mb-8 mb-md-0" cols="12" md="6">
           <v-img
             class="elevation-4 mx-auto"
@@ -32,44 +44,91 @@
             position="bottom"
             rounded="lg"
             src="@/assets/service/service_cars.jpeg"
-            width="100%"
+            width="600"
           />
-        </v-col>
-        <v-col class="pl-md-12" cols="12" md="6">
-          <h2 class="text-h4 font-weight-bold text-secondary mb-6">
-            Precyzja i Pasja
-          </h2>
-          <p class="text-body-1 text-secondary" style="line-height: 1.8;">
-            Łączymy doświadczenie z nowoczesną technologią, precyzję z pasją, a profesjonalizm z indywidualnym podejściem do każdego klienta. Bo dla nas serwis to coś więcej niż naprawa – to troska o Twoją mobilność, komfort i niezawodność każdego dnia.
-          </p>
         </v-col>
       </v-row>
     </v-container>
 
-    <v-sheet class="bg-grey-darken-4 text-center">
-      <v-img
-        class="align-center text-center"
-        cover
-        gradient="to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.8)"
-        height="600"
-        position="bottom"
-        src="@/assets/service/service_garage.jpg"
-      >
-        <div class="py-16 w-100">
-          <v-container>
-            <!-- <v-icon class="text-red mb-4" icon="mdi-car-wrench" size="64" /> -->
-            <h3 class="text-h3 font-weight-bold text-white mb-4">
-              Twój samochód w najlepszych rękach.
-            </h3>
-            <p class="text-h5 text-grey-lighten-1 font-weight-light mx-auto" style="max-width: 700px;">
-              Zaufaj specjalistom, którzy rozumieją motoryzację tak samo dobrze jak Ty kochasz jazdę.
-            </p>
-          </v-container>
-        </div>
-      </v-img>
-    </v-sheet>
+    <v-container class="py-2" style="max-width: 1500px;">
+      <div class="text-center mb-16 px-4">
+        <h2 class="text-h5 text-md-h4 font-weight-bold text-secondary mb-4 justify-center d-flex align-center text-wrap">
+          <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-shield-car" size="36" />
+          Twój samochód w najlepszych rękach.
+        </h2>
+        <p class="text-body-1 text-secondary mx-auto text-wrap" style="line-height: 1.8; max-width: 800px;">
+          Zaufaj specjalistom, którzy rozumieją motoryzację tak samo dobrze jak Ty kochasz jazdę.
+        </p>
+      </div>
 
-    <v-container class="py-16">
+      <v-row class="ga-4 ga-lg-0 flex-nowrap flex-lg-wrap overflow-x-auto pb-6">
+        <v-col
+          class="flex-shrink-0"
+          cols="10"
+          lg="3"
+          md="4"
+          sm="5"
+        >
+          <v-img
+            class="elevation-3 w-100"
+            cover
+            height="380"
+            rounded="lg"
+            src="@/assets/service/service_detail.jpg"
+          />
+        </v-col>
+
+        <v-col
+          class="flex-shrink-0 mt-lg-12"
+          cols="10"
+          lg="3"
+          md="4"
+          sm="5"
+        >
+          <v-img
+            class="elevation-3 w-100"
+            cover
+            height="380"
+            rounded="lg"
+            src="@/assets/service/service_detail2.jpg"
+          />
+        </v-col>
+
+        <v-col
+          class="flex-shrink-0"
+          cols="10"
+          lg="3"
+          md="4"
+          sm="5"
+        >
+          <v-img
+            class="elevation-3 w-100"
+            cover
+            height="380"
+            rounded="lg"
+            src="@/assets/service/service_detail3.jpg"
+          />
+        </v-col>
+
+        <v-col
+          class="flex-shrink-0 mt-lg-12"
+          cols="10"
+          lg="3"
+          md="4"
+          sm="5"
+        >
+          <v-img
+            class="elevation-3 w-100"
+            cover
+            height="380"
+            rounded="lg"
+            src="@/assets/service/service_detail4.jpg"
+          />
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container class="py-16 px-4 px-md-16" fluid>
       <v-row class="align-center">
         <v-col class="pr-md-12 mb-8 mb-md-0" cols="12" md="6">
           <h2 class="text-h3 font-weight-bold text-secondary mb-6">
@@ -122,7 +181,6 @@
             style="border-left: 5px solid #E53935;"
           >
             <v-icon class="mr-4 flex-shrink-0" color="red" icon="mdi-shield-check-outline" size="36" />
-
             <p class="text-h6 font-weight-bold text-white mb-0" style="line-height: 1.4;">
               Bo doskonałość to nie opcja.<br>
               <span class="text-white">To standard, na który zasługuje Twoje auto.</span>
@@ -131,26 +189,13 @@
         </v-col>
 
         <v-col cols="12" md="6">
-          <v-row class="ga-4" dense>
-            <v-col>
-              <v-img
-                class="elevation-3 w-100"
-                cover
-                height="380"
-                rounded="lg"
-                src="@/assets/service/service_detail2.jpeg"
-              />
-            </v-col>
-            <v-col class="mt-12">
-              <v-img
-                class="elevation-3 w-100"
-                cover
-                height="380"
-                rounded="lg"
-                src="@/assets/service/service_detail.jpg"
-              />
-            </v-col>
-          </v-row>
+          <v-img
+            class="elevation-4 w-100 mx-auto"
+            cover
+            height="600"
+            rounded="lg"
+            src="@/assets/service/service_garage.jpg"
+          />
         </v-col>
 
       </v-row>
