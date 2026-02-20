@@ -55,7 +55,7 @@
             max-height="200"
             :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
           >
-            <div class="w-100 px-4 pb-3 pt-10" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+            <div class="w-100 px-4 pb-1 pt-10" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
               <h3 class="text-h6 font-weight-bold text-white mb-0">
                 {{ car.title }}
               </h3>
