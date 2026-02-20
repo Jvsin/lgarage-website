@@ -49,18 +49,20 @@
       >
         <v-card class="h-100 d-flex flex-column" rounded="lg" variant="outlined">
           <v-img
-            class="bg-grey-lighten-2"
+            class="bg-grey-lighten-2 align-end"
             cover
             height="200"
             max-height="200"
             :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
-          />
+          >
+            <div class="w-100 px-4 pb-3 pt-10" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+              <h3 class="text-h6 font-weight-bold text-white mb-0">
+                {{ car.title }}
+              </h3>
+            </div>
+          </v-img>
 
-          <v-card-title class="font-weight-bold text-secondary mt-2">
-            {{ car.title }}
-          </v-card-title>
-
-          <v-card-subtitle class="opacity-100">
+          <v-card-subtitle class="opacity-100 pt-1">
             <div class="d-flex flex-column ga-2 mb-4">
               <div>
                 <span class="text-h5 font-weight-bold text-red">
