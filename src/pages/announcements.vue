@@ -54,25 +54,24 @@
             {{ car.title }}
           </v-card-title>
 
-          <v-card-subtitle class="opacity-100 mb-2">
-            <div class="mb-2">
-              <v-row align="center">
-                <v-col cols="12" sm="4">
-                  <span class="text-h4 font-weight-bold text-red">
-                    {{ car.price?.toLocaleString() }} PLN
-                  </span>
-                </v-col>
+          <v-card-subtitle class="opacity-100">
+            <div class="d-flex flex-column ga-3 mb-3">
+              <div>
+                <span class="text-h4 font-weight-bold text-red">
+                  {{ car.price?.toLocaleString() }} PLN
+                </span>
+              </div>
 
-                <v-col class="d-flex align-center justify-start justify-sm-end flex-wrap ga-2" cols="12" sm="8">
-                  <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
-                    Rok: {{ car.year }}
-                  </v-chip>
+              <div class="d-flex flex-wrap align-center ga-2">
+                <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                  Rok: {{ car.year }}
+                </v-chip>
 
-                  <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
-                    Przebieg: {{ car.mileage.toLocaleString() }} km
-                  </v-chip>
-                </v-col>
-              </v-row>
+                <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
+                  Przebieg: {{ car.mileage.toLocaleString() }} km
+                </v-chip>
+              </div>
+
             </div>
           </v-card-subtitle>
 

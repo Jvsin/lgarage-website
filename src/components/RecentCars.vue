@@ -5,6 +5,7 @@
   const store = useAnnouncementsStore()
 
   const recentCars = computed(() => store.cars.slice(0, 3))
+  const allCarsNumber = computed(() => (store.cars).length)
 
   onMounted(() => {
     store.fetchCars()
@@ -13,9 +14,14 @@
 
 <template>
   <v-container v-if="recentCars.length > 0" class="py-6" fluid>
-    <h2 class="text-h4 font-weight-bold text-secondary text-center mb-6">
-      Ogłoszenia aut
-    </h2>
+    <div class="text-center mb-4">
+      <h2 class="text-h4 font-weight-bold text-secondary mb-2">
+        Ogłoszenia aut
+      </h2>
+      <p class="text-subtitle-1 text-medium-emphasis">
+        Aktualnie dostępnych ogłoszeń: <span class="font-weight-bold text-red">{{ allCarsNumber }}</span>
+      </p>
+    </div>
 
     <div v-if="store.loadingCars" class="text-center py-5">
       <v-progress-circular color="primary" indeterminate />
@@ -31,12 +37,14 @@
       Brak aktualnych ogłoszeń.
     </v-alert>
 
-    <v-row v-else class="justify-center" dense>
+    <v-row v-else class="flex-nowrap flex-lg-wrap overflow-x-auto pb-4" dense>
       <v-col
         v-for="car in recentCars"
         :key="car.id"
-        cols="12"
-        md="4"
+        class="flex-shrink-0"
+        cols="10"
+        lg="4"
+        md="5"
         sm="6"
       >
         <v-card class="h-100 d-flex flex-column" rounded="lg" variant="outlined">
@@ -52,25 +60,24 @@
             {{ car.title }}
           </v-card-title>
 
-          <v-card-subtitle class="opacity-100 mb-2">
-            <div class="mb-6">
-              <v-row align="center">
-                <v-col cols="12" sm="4">
-                  <span class="text-h5 font-weight-bold text-red">
-                    {{ car.price?.toLocaleString() }} PLN
-                  </span>
-                </v-col>
+          <v-card-subtitle class="opacity-100">
+            <div class="d-flex flex-column ga-2 mb-4">
+              <div>
+                <span class="text-h5 font-weight-bold text-red">
+                  {{ car.price?.toLocaleString() }} PLN
+                </span>
+              </div>
 
-                <v-col class="d-flex align-center justify-start justify-sm-end flex-wrap ga-2" cols="12" sm="8">
-                  <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
-                    Rok: {{ car.year }}
-                  </v-chip>
+              <div class="d-flex flex-wrap align-center ga-2">
+                <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
+                  Rok: {{ car.year }}
+                </v-chip>
 
-                  <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
-                    Przebieg: {{ car.mileage.toLocaleString() }} km
-                  </v-chip>
-                </v-col>
-              </v-row>
+                <v-chip class="font-weight-bold text-white" color="white" size="default" variant="outlined">
+                  Przebieg: {{ car.mileage.toLocaleString() }} km
+                </v-chip>
+              </div>
+
             </div>
           </v-card-subtitle>
 
@@ -81,10 +88,20 @@
       </v-col>
     </v-row>
 
-    <div class="text-center mt-8">
+    <div class="text-center mt-2">
       <v-btn color="red-background" size="large" to="/announcements">
-        Zobacz wszystkie oferty
+        {{ 'Więcej ogłoszeń (+' + (allCarsNumber - recentCars.length) + ')' }}
       </v-btn>
     </div>
   </v-container>
 </template>
+
+<style scoped>
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
