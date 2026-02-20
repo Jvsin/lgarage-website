@@ -2,6 +2,7 @@
   import { useGoTo } from 'vuetify'
   import ContactMapSection from '@/components/ContactMapSection.vue'
   import OpinionsSection from '@/components/OpinionsSection.vue'
+  import RecentCars from '@/components/RecentCars.vue'
   import WhyUsCarousel from '@/components/WhyUsCarousel.vue'
 
   const goTo = useGoTo()
@@ -64,6 +65,10 @@
 
     <div id="oferta">
       <WhyUsCarousel />
+    </div>
+
+    <div id="ogloszenia">
+      <RecentCars />
     </div>
 
     <v-container class="py-3" fluid>
