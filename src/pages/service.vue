@@ -43,37 +43,9 @@
       </v-container>
     </v-img>
 
-    <v-container class="py-8 px-4 px-md-16" fluid>
-      <v-row class="align-center">
-        <v-col class="pl-md-12" cols="12" md="6">
-          <div class="my-6 text-center">
-            <h2 class="text-h4 text-center font-weight-bold text-secondary mb-4 d-flex justify-center align-center">
-              <v-icon class="mr-4 flex-shrink-0" color="red" icon="mdi-cards-heart" size="36" />
-              Precyzja i pasja
-            </h2>
-            <p class="text-body-1 text-secondary" style="line-height: 1.8;">
-              Łączymy doświadczenie z nowoczesną technologią, precyzję z pasją, a profesjonalizm z indywidualnym podejściem do każdego klienta. Bo dla nas serwis to coś więcej niż naprawa – to troska o Twoją mobilność, komfort i niezawodność każdego dnia.
-            </p>
-          </div>
-        </v-col>
-
-        <v-col class="mb-8 mb-md-0" cols="12" md="6">
-          <v-img
-            class="elevation-4 mx-auto"
-            cover
-            height="500"
-            position="bottom"
-            rounded="lg"
-            src="@/assets/service/service_cars.jpeg"
-            width="600"
-          />
-        </v-col>
-      </v-row>
-    </v-container>
-
     <div class="py-2">
       <v-container fluid>
-        <div class="mb-12 text-center">
+        <div class="my-8 text-center">
           <h2 class="font-weight-bold mb-4 text-h4 text-md-h3 text-white">
             Nasze Oficjalne Autoryzacje
           </h2>
@@ -117,73 +89,22 @@
     </div>
 
     <v-img
-      class="align-center d-flex"
+      class="align-center d-flex text-center"
       cover
-      gradient="to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.9)"
-      max-height="700"
-      min-height="600"
-      src="@/assets/service/service_garage.jpg"
+      gradient="to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.9)"
+      max-height="600"
+      min-height="400"
+      position="center"
+      src="@/assets/service/service_cars.jpeg"
     >
-      <v-container class="px-4 py-10 py-md-16 text-center" style="max-width: 900px;">
-        <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-white">
-          Więcej niż standardowy serwis
+      <v-container class="px-4 py-12 py-md-16" style="max-width: 900px;">
+        <h2 class="align-center d-flex font-weight-bold justify-center mb-4 mb-md-6 text-h4 text-md-h3 text-white">
+          <v-icon class="flex-shrink-0 mr-3 mr-md-4" color="red" icon="mdi-cards-heart" size="36" />
+          Precyzja i pasja
         </h2>
-
-        <p class="mb-6 mb-md-8 mx-auto text-body-1 text-grey-lighten-1" style="line-height: 1.8; max-width: 700px;">
-          Kiedy mówimy, że zadbamy o Twoje auto, mamy na myśli coś więcej niż standardowy serwis. Oferujemy:
+        <p class="mx-auto text-body-1 text-grey-lighten-1" style="line-height: 1.8; max-width: 800px;">
+          Łączymy doświadczenie z nowoczesną technologią, precyzję z pasją, a profesjonalizm z indywidualnym podejściem do każdego klienta. Bo dla nas serwis to coś więcej niż naprawa – to troska o Twoją mobilność, komfort i niezawodność każdego dnia.
         </p>
-
-        <div class="d-flex justify-center mb-8 mb-md-10">
-          <v-list class="bg-transparent text-left" density="compact" style="max-width: 650px;">
-            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
-              <template #prepend>
-                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
-              </template>
-              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
-                najwyższy poziom usług serwisowych, oparty na wiedzy i doświadczeniu
-              </span>
-            </v-list-item>
-
-            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
-              <template #prepend>
-                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
-              </template>
-              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
-                przeglądy gwarancyjne i pogwarancyjne zgodne ze standardami producenta
-              </span>
-            </v-list-item>
-
-            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
-              <template #prepend>
-                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
-              </template>
-              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
-                pracę na oryginalnym systemie oraz stosowanie się do wytycznych marki
-              </span>
-            </v-list-item>
-
-            <v-list-item class="align-start d-flex mb-2 mb-md- px-0">
-              <template #prepend>
-                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
-              </template>
-              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
-                kompleksową obsługę dopasowaną do potrzeb Twojego auta – od diagnostyki po zaawansowane naprawy
-              </span>
-            </v-list-item>
-          </v-list>
-        </div>
-
-        <div
-          class="align-center bg-grey-darken-4 d-flex elevation-3 mx-auto pa-4 pa-md-6 rounded-lg text-left"
-          style="border-left: 5px solid #E53935; max-width: 700px;"
-        >
-          <v-icon class="flex-shrink-0 mr-3 mr-md-4" color="red" icon="mdi-shield-check-outline" size="36" />
-          <p class="font-weight-bold mb-0 text-subtitle-1 text-md-h6 text-white" style="line-height: 1.4;">
-            Bo doskonałość to nie opcja.<br>
-            <span class="text-grey-lighten-1">To standard, na który zasługuje Twoje auto.</span>
-          </p>
-        </div>
-
       </v-container>
     </v-img>
 
@@ -264,6 +185,77 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <v-img
+      class="align-center d-flex"
+      cover
+      gradient="to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.9)"
+      max-height="800"
+      min-height="600"
+      src="@/assets/service/service_garage.jpg"
+    >
+      <v-container class="px-4 py-10 py-md-16 text-center" style="max-width: 900px;">
+        <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-white">
+          Więcej niż standardowy serwis
+        </h2>
+
+        <p class="mb-6 mb-md-8 mx-auto text-body-1 text-grey-lighten-1" style="line-height: 1.8; max-width: 700px;">
+          Kiedy mówimy, że zadbamy o Twoje auto, mamy na myśli coś więcej niż standardowy serwis. Oferujemy:
+        </p>
+
+        <div class="d-flex justify-center mb-8 mb-md-10">
+          <v-list class="bg-transparent text-left" density="compact" style="max-width: 650px;">
+            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
+              <template #prepend>
+                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
+              </template>
+              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
+                najwyższy poziom usług serwisowych, oparty na wiedzy i doświadczeniu
+              </span>
+            </v-list-item>
+
+            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
+              <template #prepend>
+                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
+              </template>
+              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
+                przeglądy gwarancyjne i pogwarancyjne zgodne ze standardami producenta
+              </span>
+            </v-list-item>
+
+            <v-list-item class="align-start d-flex mb-2 mb-md-3 px-0">
+              <template #prepend>
+                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
+              </template>
+              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
+                pracę na oryginalnym systemie oraz stosowanie się do wytycznych marki
+              </span>
+            </v-list-item>
+
+            <v-list-item class="align-start d-flex mb-2 mb-md- px-0">
+              <template #prepend>
+                <v-icon class="mr-3 mr-md-4 mt-1 text-red" icon="mdi-check-circle" />
+              </template>
+              <span class="text-body-1 text-grey-lighten-1" style="line-height: 1.5;">
+                kompleksową obsługę dopasowaną do potrzeb Twojego auta – od diagnostyki po zaawansowane naprawy
+              </span>
+            </v-list-item>
+          </v-list>
+        </div>
+
+        <div
+          class="align-center bg-grey-darken-4 d-flex elevation-3 mx-auto pa-4 pa-md-6 rounded-lg text-left"
+          style="border-left: 5px solid #E53935; max-width: 700px;"
+        >
+          <v-icon class="flex-shrink-0 mr-3 mr-md-4" color="red" icon="mdi-shield-check-outline" size="36" />
+          <p class="font-weight-bold mb-0 text-subtitle-1 text-md-h6 text-white" style="line-height: 1.4;">
+            Bo doskonałość to nie opcja.<br>
+            <span class="text-grey-lighten-1">To standard, na który zasługuje Twoje auto.</span>
+          </p>
+        </div>
+
+      </v-container>
+    </v-img>
   </div>
 
 </template>
