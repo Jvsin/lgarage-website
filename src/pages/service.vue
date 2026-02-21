@@ -1,6 +1,27 @@
 <script setup>
-  // Tu na razie nie potrzebujemy skomplikowanej logiki,
-  // ale zostawiam otwarty skrypt na przyszłość.
+  import { ref } from 'vue'
+
+  function getImageUrl (name) {
+    const fileName = name.toLowerCase()
+
+    return new URL(`../assets/marks/${fileName.toLowerCase()}.png`, import.meta.url).href
+  }
+
+  const supportedBrands = ref([
+    { name: 'Audi' },
+    { name: 'Bentley' },
+    { name: 'BMW' },
+    { name: 'Cupra' },
+    { name: 'Ford' },
+    { name: 'Lexus' },
+    { name: 'Mazda' },
+    { name: 'Mercedes' },
+    { name: 'Mini' },
+    { name: 'Seat' },
+    { name: 'Skoda' },
+    { name: 'Toyota' },
+    { name: 'Volkswagen' },
+  ])
 </script>
 
 <template>
@@ -47,6 +68,50 @@
             width="600"
           />
         </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container class="py-12 py-md-8" style="max-width: 1200px;">
+      <div class="text-center mb-10">
+        <h2 class="text-h4 font-weight-bold text-secondary mb-4">
+          Marki, w których się specjalizujemy
+        </h2>
+        <p class="text-body-1 text-medium-emphasis">
+          Posiadamy dedykowane oprogramowanie i narzędzia do obsługi poniższych pojazdów.
+        </p>
+      </div>
+
+      <v-row class="flex-nowrap flex-sm-wrap justify-sm-center overflow-x-auto pb-6 px-2 ga-4">
+        <v-col
+          v-for="brand in supportedBrands"
+          :key="brand.name"
+          class="flex-shrink-0 text-center"
+          cols="auto"
+        >
+          <v-card
+            class="align-center d-flex flex-column justify-center pa-4 transition-swing"
+            color="transparent"
+            elevation="2"
+            height="130"
+            rounded="lg"
+            width="130"
+          >
+            <v-img
+              alt="Logo marki"
+              class="mb-3 mx-auto"
+              height="65"
+              :src="getImageUrl(brand.name)"
+              width="65"
+            />
+            <span
+              class="font-weight-bold text-caption text-secondary text-uppercase text-center"
+              style="letter-spacing: 0.5px; line-height: 1.2;"
+            >
+              Serwis<br>{{ brand.name }}
+            </span>
+          </v-card>
+        </v-col>
+
       </v-row>
     </v-container>
 
@@ -199,6 +264,7 @@
       </v-row>
     </v-container>
   </div>
+
 </template>
 
 <style scoped>
