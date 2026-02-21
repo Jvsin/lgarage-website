@@ -71,49 +71,50 @@
       </v-row>
     </v-container>
 
-    <v-container class="py-12 py-md-8" style="max-width: 1200px;">
-      <div class="text-center mb-10">
-        <h2 class="text-h4 font-weight-bold text-secondary mb-4">
-          Marki, w których się specjalizujemy
-        </h2>
-        <p class="text-body-1 text-medium-emphasis">
-          Posiadamy dedykowane oprogramowanie i narzędzia do obsługi poniższych pojazdów.
-        </p>
-      </div>
+    <div class="py-2">
+      <v-container fluid>
+        <div class="mb-12 text-center">
+          <h2 class="font-weight-bold mb-4 text-h4 text-md-h3 text-white">
+            Nasze Oficjalne Autoryzacje
+          </h2>
+          <p class="mx-auto text-body-1 text-grey-lighten-1" style="line-height: 1.8; max-width: 800px;">
+            Jesteśmy dumni z faktu, że spełniamy najwyższe standardy światowych marek. Posiadamy oficjalne autoryzacje, co oznacza naprawy zgodne z restrykcyjnymi wytycznymi producentów, dostęp do oryginalnej dokumentacji oraz najwyższej klasy sprzęt diagnostyczny.
+          </p>
+        </div>
 
-      <v-row class="flex-nowrap flex-sm-wrap justify-sm-center overflow-x-auto pb-6 px-2 ga-4">
-        <v-col
-          v-for="brand in supportedBrands"
-          :key="brand.name"
-          class="flex-shrink-0 text-center"
-          cols="auto"
-        >
-          <v-card
-            class="align-center d-flex flex-column justify-center pa-4 transition-swing"
-            color="transparent"
-            elevation="2"
-            height="130"
-            rounded="lg"
-            width="130"
+        <v-row class="flex-md-wrap flex-nowrap ga-2 ga-md-4 justify-md-center overflow-x-auto pb-6 px-2">
+          <v-col
+            v-for="brand in supportedBrands"
+            :key="brand.name"
+            class="flex-shrink-0 px-2 py-0 py-md-4 text-center"
+            cols="auto"
           >
-            <v-img
-              alt="Logo marki"
-              class="mb-3 mx-auto"
-              height="65"
-              :src="getImageUrl(brand.name)"
-              width="65"
-            />
-            <span
-              class="font-weight-bold text-caption text-secondary text-uppercase text-center"
-              style="letter-spacing: 0.5px; line-height: 1.2;"
+            <v-card
+              class="align-center d-flex flex-column justify-center transition-swing"
+              color="transparent"
+              elevation="0"
+              height="190"
+              width="150"
             >
-              Serwis<br>{{ brand.name }}
-            </span>
-          </v-card>
-        </v-col>
+              <v-img
+                :alt="`Logo marki ${brand.name}`"
+                class="mx-auto"
+                height="150"
+                :src="getImageUrl(brand.name)"
+                width="150"
+              />
+              <span
+                class="font-weight-bold text-caption text-center text-md-subtitle-2 text-uppercase text-white"
+                style="letter-spacing: 1px; line-height: 1.3;"
+              >
+                Autoryzacja<br><span class="text-red">{{ brand.name }}</span>
+              </span>
+            </v-card>
+          </v-col>
 
-      </v-row>
-    </v-container>
+        </v-row>
+      </v-container>
+    </div>
 
     <v-img
       class="align-center d-flex"
