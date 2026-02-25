@@ -1,25 +1,25 @@
 <script setup>
   const slides = [
     {
-      icon: 'mdi-car-wrench',
-      title: 'SERWIS',
       description: 'Mechanika i diagnostyka.',
+      icon: 'mdi-car-wrench',
       image: 'serwis.png',
       link: '/service',
+      title: 'SERWIS',
     },
     {
-      icon: 'mdi-creation',
-      title: 'DETAILING',
       description: 'Folie ceramiczne, folie PPF.',
+      icon: 'mdi-creation',
       image: 'detaling.png',
       link: '/detaling',
+      title: 'DETAILING',
     },
     {
-      icon: 'mdi-speedometer',
-      title: 'PERFORMANCE',
       description: 'Tuning i modyfikacje.',
+      icon: 'mdi-speedometer',
       image: 'performance.png',
       link: '/performance',
+      title: 'PERFORMANCE',
     },
   ]
 
@@ -32,13 +32,13 @@
 
 <template>
   <v-container class="py-3" fluid>
-    <h2 class="my-3 text-h4 font-weight-bold text-secondary text-center">
+    <h2 class="font-weight-bold my-3 text-center text-h4 text-secondary">
       Dlaczego my?
     </h2>
     <v-carousel
       class="why-us-carousel"
       cycle
-      height="320"
+      height="360"
       :interval="3500"
       show-arrows="hover"
     >
@@ -54,15 +54,18 @@
           :style="getSlideStyle(slide.image)"
         >
           <div class="tile-content text-center text-secondary">
-            <v-icon class="pt-2 mb-3" color="secondary" size="x-large">
+            <v-icon class="mb-3 pt-2" color="secondary" size="x-large">
               {{ slide.icon }}
             </v-icon>
-            <div class="text-h5 font-weight-bold mb-2">
+
+            <div class="font-weight-bold mb-2 text-h4 text-md-h3">
               {{ slide.title }}
             </div>
-            <div class="text-body-1 mb-6">
+
+            <div class="mb-6 text-h6 text-md-h5">
               {{ slide.description }}
             </div>
+
             <v-btn class="text-secondary" color="red-background" size="large" :to="slide.link">
               Zobacz
             </v-btn>
@@ -88,17 +91,17 @@
   }
 
   .carousel-tile {
-    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
   }
 
   .tile-content {
-    height: 100%;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    height: 100%;
     justify-content: center;
   }
 </style>

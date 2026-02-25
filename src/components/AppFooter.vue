@@ -3,7 +3,7 @@
     <v-container class="py-6 d-flex flex-column flex-md-row align-center justify-space-between">
       <div class="text-center">
         <div class="text-h6 font-weight-bold">Gawrych Serwis&Detaling</div>
-        <div class="text-body-2">Warsztat samochodowy i detailing</div>
+        <div class="text-body-2 my-2">Od 1990 roku</div>
         <div class="mt-2 d-flex ga-2 justify-center">
           <v-btn
             aria-label="Facebook"
