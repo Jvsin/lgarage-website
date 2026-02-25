@@ -54,11 +54,11 @@
           </p>
         </div>
 
-        <v-row class="flex-md-wrap flex-nowrap ga-2 ga-md-4 justify-md-center overflow-x-auto pb-6 px-2">
+        <v-row class="d-none d-md-flex flex-wrap ga-4 justify-center pb-6 px-2">
           <v-col
             v-for="brand in supportedBrands"
-            :key="brand.name"
-            class="flex-shrink-0 px-2 py-0 py-md-4 text-center"
+            :key="`desktop-${brand.name}`"
+            class="flex-shrink-0 px-2 py-0 text-center"
             cols="auto"
           >
             <v-card
@@ -75,16 +75,35 @@
                 :src="getImageUrl(brand.name)"
                 width="150"
               />
-              <!-- <span
-                class="font-weight-bold text-caption text-center text-md-subtitle-2 text-uppercase text-white"
-                style="letter-spacing: 1px; line-height: 1.3;"
-              >
-                Autoryzacja<br><span class="text-red">{{ brand.name }}</span>
-              </span> -->
             </v-card>
           </v-col>
-
         </v-row>
+
+        <div class="d-block d-md-none overflow-hidden pb-6 w-100">
+          <div class="marquee-track d-flex">
+            <div
+              v-for="(brand, index) in [...supportedBrands, ...supportedBrands]"
+              :key="`mobile-${brand.name}-${index}`"
+              class="flex-shrink-0 px-2"
+            >
+              <v-card
+                class="align-center d-flex flex-column justify-center transition-swing"
+                color="transparent"
+                elevation="0"
+                height="150"
+                width="150"
+              >
+                <v-img
+                  :alt="`Logo marki ${brand.name}`"
+                  class="mx-auto"
+                  height="150"
+                  :src="getImageUrl(brand.name)"
+                  width="150"
+                />
+              </v-card>
+            </div>
+          </div>
+        </div>
       </v-container>
     </div>
 
@@ -261,7 +280,6 @@
 </template>
 
 <style scoped>
-/* Gradient przyciemniający dla głównego banera, by biały tekst był czytelny na każdym zdjęciu */
 .overlay {
   position: absolute;
   top: 0;
@@ -273,5 +291,19 @@
 }
 .z-1 {
   z-index: 1;
+}
+
+.marquee-track {
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 </style>
