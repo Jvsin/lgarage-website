@@ -1,5 +1,5 @@
 <script setup>
-  import { ref } from 'vue'
+  import { computed, ref } from 'vue'
 
   function getImageUrl (name) {
     const fileName = name.toLowerCase()
@@ -22,6 +22,16 @@
     { name: 'Toyota' },
     { name: 'Volkswagen' },
   ])
+  const searchQuery = ref('')
+
+  const filteredBrands = computed(() => {
+    if (!searchQuery.value) return supportedBrands.value
+
+    const query = searchQuery.value.toLowerCase()
+    return supportedBrands.value.filter(brand =>
+      brand.name.toLowerCase().includes(query),
+    )
+  })
 </script>
 
 <template>
@@ -54,37 +64,82 @@
           </p>
         </div>
 
-        <v-row class="d-none d-md-flex flex-wrap ga-4 justify-center pb-6 px-2">
-          <v-col
-            v-for="brand in supportedBrands"
-            :key="`desktop-${brand.name}`"
-            class="flex-shrink-0 px-2 py-0 text-center"
-            cols="auto"
-          >
-            <v-card
-              class="align-center d-flex flex-column justify-center transition-swing"
-              color="transparent"
-              elevation="0"
-              height="150"
-              width="150"
-            >
-              <v-img
-                :alt="`Logo marki ${brand.name}`"
-                class="mx-auto"
-                height="150"
-                :src="getImageUrl(brand.name)"
-                width="150"
-              />
-            </v-card>
-          </v-col>
-        </v-row>
+        <div class="mb-10 px-4">
+          <v-text-field
+            v-model="searchQuery"
+            base-color="grey-lighten-1"
+            class="mx-auto text-white"
+            clearable
+            density="comfortable"
+            hide-details
+            label="Znajdź swoją markę..."
+            prepend-inner-icon="mdi-magnify"
+            style="max-width: 400px;"
+            variant="outlined"
+          />
+        </div>
 
-        <div class="d-block d-md-none overflow-hidden pb-6 w-100">
-          <div class="marquee-track d-flex">
-            <div
-              v-for="(brand, index) in [...supportedBrands, ...supportedBrands]"
-              :key="`mobile-${brand.name}-${index}`"
-              class="flex-shrink-0 px-2"
+        <div class="overflow-hidden pb-6 w-100">
+          <template v-if="!searchQuery">
+            <v-row class="d-none d-md-flex flex-wrap ga-4 justify-center px-2">
+              <v-col
+                v-for="brand in supportedBrands"
+                :key="`desktop-${brand.name}`"
+                class="flex-shrink-0 px-2 py-0 text-center"
+                cols="auto"
+              >
+                <v-card
+                  class="align-center d-flex flex-column justify-center transition-swing"
+                  color="transparent"
+                  elevation="0"
+                  height="150"
+                  width="150"
+                >
+                  <v-img
+                    :alt="`Logo marki ${brand.name}`"
+                    class="mx-auto"
+                    height="150"
+                    :src="getImageUrl(brand.name)"
+                    width="150"
+                  />
+                </v-card>
+              </v-col>
+            </v-row>
+
+            <div class="d-block d-md-none">
+              <div class="marquee-track d-flex">
+                <div
+                  v-for="(brand, index) in [...supportedBrands, ...supportedBrands]"
+                  :key="`marquee-${brand.name}-${index}`"
+                  class="flex-shrink-0 px-2"
+                >
+                  <v-card
+                    class="align-center d-flex flex-column justify-center transition-swing"
+                    color="transparent"
+                    elevation="0"
+                    height="150"
+                    width="150"
+                  >
+                    <v-img
+                      :alt="`Logo marki ${brand.name}`"
+                      class="mx-auto"
+                      height="150"
+                      :src="getImageUrl(brand.name)"
+                      width="150"
+                    />
+                  </v-card>
+                </div>
+              </div>
+            </div>
+
+          </template>
+
+          <v-row v-else class="flex-wrap justify-center px-2">
+            <v-col
+              v-for="brand in filteredBrands"
+              :key="`search-${brand.name}`"
+              class="flex-shrink-0 px-2 py-2 text-center"
+              cols="auto"
             >
               <v-card
                 class="align-center d-flex flex-column justify-center transition-swing"
@@ -101,8 +156,15 @@
                   width="150"
                 />
               </v-card>
-            </div>
-          </div>
+            </v-col>
+
+            <v-col v-if="filteredBrands.length === 0" class="text-center" cols="12">
+              <span class="text-h6 text-grey-lighten-1">
+                Niestety, nie posiadamy autoryzacji dla tej marki.
+              </span>
+            </v-col>
+          </v-row>
+
         </div>
       </v-container>
     </div>
