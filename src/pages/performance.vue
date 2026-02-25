@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <v-container class="py-6 py-md-10 px-4 px-md-16" fluid>
+  <v-container class="py-6 py-md-10" fluid>
     <v-row class="align-center">
       <v-col cols="12" md="6">
         <v-img

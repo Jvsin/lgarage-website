@@ -32,15 +32,15 @@
 
           <v-divider class="my-2 border-opacity-25" />
 
-          <v-list-item href="#sekcja-1" link>
+          <v-list-item link to="/service">
             <v-list-item-title class="text-secondary">Serwis</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="#sekcja-2" link>
+          <v-list-item link to="/detaling">
             <v-list-item-title class="text-secondary">Detaling</v-list-item-title>
           </v-list-item>
 
-          <v-list-item href="#sekcja-3" link>
+          <v-list-item link to="/performance">
             <v-list-item-title class="text-secondary">Performence</v-list-item-title>
           </v-list-item>
 
