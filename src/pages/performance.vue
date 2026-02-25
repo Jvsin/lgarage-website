@@ -3,8 +3,17 @@
 </script>
 
 <template>
-  <v-container class="py-6 py-md-12 px-4 px-md-16" fluid>
-    <v-row class="align-center mb-10 mb-md-16">
+  <v-container class="py-6 py-md-10 px-4 px-md-16" fluid>
+    <v-row class="align-center">
+      <v-col cols="12" md="6">
+        <v-img
+          class="elevation-4 mx-auto rounded-lg"
+          cover
+          src="@/assets/performance/chip_tuning.png"
+          style="min-height: 350px; height: 100%; max-height: 550px;"
+        />
+      </v-col>
+
       <v-col cols="12" md="6">
         <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
           Twój samochód ma większy potencjał, niż myślisz.
@@ -18,27 +27,27 @@
           Co więcej — ten sam silnik często występuje w kilku wariantach mocy, różniących się wyłącznie oprogramowaniem. My optymalizujemy parametry tak, aby pracowały w bezpiecznym zakresie konstrukcyjnym jednostki.
         </p>
 
-        <v-row class="mb-4">
+        <v-row class="mb-0">
           <v-col cols="12" sm="6">
             <h3 class="font-weight-bold mb-3 text-h6 text-secondary">Co zyskujesz?</h3>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-check-circle" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
               <span class="text-body-1 text-secondary">Zwiększenie mocy i momentu obrotowego</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-check-circle" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
               <span class="text-body-1 text-secondary">Lepsze przyspieszenie i elastyczność</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-check-circle" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
               <span class="text-body-1 text-secondary">Dynamiczniejszą, płynniejszą jazdę</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-check-circle" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
               <span class="text-body-1 text-secondary">Możliwość optymalizacji spalania</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-check-circle" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
               <span class="text-body-1 text-secondary">Program dopasowany indywidualnie do Twojego auta</span>
             </div>
           </v-col>
@@ -46,29 +55,33 @@
           <v-col class="mt-4 mt-sm-0" cols="12" sm="6">
             <h3 class="font-weight-bold mb-3 text-h6 text-secondary">Jak pracujemy?</h3>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-cog" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-cog" />
               <span class="text-body-1 text-secondary">Odczyt oryginalnego oprogramowania ECU</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-cog" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-cog" />
               <span class="text-body-1 text-secondary">Analiza parametrów silnika</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-cog" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-cog" />
               <span class="text-body-1 text-secondary">Indywidualne strojenie mapy</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-cog" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-cog" />
               <span class="text-body-1 text-secondary">Zachowanie bezpiecznych norm pracy</span>
             </div>
             <div class="d-flex align-start mb-2">
-              <v-icon color="red" icon="mdi-cog" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-cog" />
               <span class="text-body-1 text-secondary">Kontrola efektów po modyfikacji</span>
             </div>
           </v-col>
         </v-row>
+      </v-col>
+    </v-row>
 
-        <div class="bg-grey-lighten-4 mt-4 mt-md-6 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #E53935;">
+    <v-row class="justify-center mb-5 mb-md-16">
+      <v-col cols="12" md="8">
+        <div class="bg-grey-darken-4 mt-4 mt-md-6 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #E53935;">
           <p class="font-weight-bold mb-2 text-h6 text-secondary" style="line-height: 1.4;">
             Więcej mocy. Więcej momentu. Ta sama trwałość.
           </p>
@@ -77,40 +90,23 @@
           </p>
         </div>
       </v-col>
-
-      <v-col class="mt-6 mt-md-0" cols="12" md="6">
-        <v-img
-          class="elevation-4 mx-auto rounded-lg"
-          cover
-          style="min-height: 350px; height: 100%; max-height: 550px;"
-          src="@/assets/performance/chip_tuning.png"
-        />
-      </v-col>
     </v-row>
 
-    <v-row class="mb-10 mb-md-16">
+    <v-row class="justify-center mb-md-16">
       <v-col cols="12">
         <v-img
-          class="elevation-4 rounded-lg"
+          class="elevation-4 mx-auto rounded-lg"
           cover
-          style="height: 250px; min-height: 250px; max-height: 400px;"
+          position="center"
           src="@/assets/performance/performance_background.jpg"
+          style="height: 400px; min-height: 250px; max-height: 400px;"
         />
       </v-col>
     </v-row>
 
-    <v-row class="align-center pb-8">
-      <v-col cols="12" md="5">
-        <v-img
-          class="elevation-4 mx-auto rounded-lg"
-          cover
-          style="min-height: 350px; height: 100%; max-height: 550px;"
-          src="@/assets/performance/start_stop.png"
-        />
-      </v-col>
-
-      <v-col class="mt-6 mt-md-0 pl-md-8" cols="12" md="7">
-        <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary text-uppercase">
+    <v-row class="align-center">
+      <v-col class="mt-6 mt-md-0 pl-md-8" cols="12" md="6">
+        <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
           Doposażenie elektroniczne Twojego auta
         </h2>
 
@@ -147,52 +143,65 @@
         </v-row>
 
         <h3 class="font-weight-bold mb-4 text-h6 text-secondary">Dlaczego warto?</h3>
-        
         <v-row class="mb-2">
           <v-col class="py-1" cols="12" sm="6">
             <div class="d-flex align-start">
-              <v-icon color="red" icon="mdi-shield-check" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
               <span class="text-body-1 text-secondary">Bez ingerencji mechanicznej</span>
             </div>
           </v-col>
 
           <v-col class="py-1" cols="12" sm="6">
             <div class="d-flex align-start">
-              <v-icon color="red" icon="mdi-shield-check" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
               <span class="text-body-1 text-secondary">Kodowanie zgodne ze specyfikacją auta</span>
             </div>
           </v-col>
 
           <v-col class="py-1" cols="12" sm="6">
             <div class="d-flex align-start">
-              <v-icon color="red" icon="mdi-shield-check" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
               <span class="text-body-1 text-secondary">Bezpieczne programowanie sterowników</span>
             </div>
           </v-col>
 
           <v-col class="py-1" cols="12" sm="6">
             <div class="d-flex align-start">
-              <v-icon color="red" icon="mdi-shield-check" class="mr-3 mt-1 flex-shrink-0" />
+              <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
               <span class="text-body-1 text-secondary">Indywidualne podejście do modelu</span>
             </div>
           </v-col>
 
-          <v-col class="py-2 mt-2" cols="12">
-            <div class="d-flex align-start">
-              <v-icon color="red" icon="mdi-information-outline" class="mr-3 mt-1 flex-shrink-0" />
+          <!-- <v-col class="py-2 mt-2" cols="12">
+            <div class="d-flex align-center justify-center">
+              <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-shield-check" />
               <span class="font-weight-bold text-body-1 text-secondary">Po inne modyfikacje skontaktuj się z nami</span>
             </div>
-          </v-col>
+          </v-col> -->
         </v-row>
+      </v-col>
 
-        <p class="font-weight-bold mt-8 mb-2 text-h6 text-secondary">
-          Twój samochód może więcej — my pokażemy Ci jak.
-        </p>
-        <p class="text-body-1 text-secondary" style="line-height: 1.8;">
-          Skontaktuj się z nami i sprawdź, jakie funkcje możemy aktywować w Twoim aucie.
-        </p>
+      <v-col cols="12" md="6">
+        <v-img
+          class="elevation-4 mx-auto rounded-lg"
+          cover
+          src="@/assets/performance/start_stop.png"
+          style="min-height: 350px; height: 100%; max-height: 550px;"
+        />
       </v-col>
     </v-row>
 
+    <v-row class="justify-center">
+      <v-col cols="12" md="8">
+        <div class="bg-grey-darken-4 mt-4 mt-md-6 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #E53935;">
+          <p class="font-weight-bold mb-2 text-h6 text-secondary" style="line-height: 1.4;">
+            Twój samochód może więcej — my pokażemy Ci jak.
+          </p>
+          <p class="mb-0 text-body-1 text-secondary" style="line-height: 1.6;">
+            Skontaktuj się z nami i sprawdź, jakie funkcje możemy aktywować w Twoim aucie.
+          </p>
+        </div>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
