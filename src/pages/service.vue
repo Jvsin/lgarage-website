@@ -47,10 +47,10 @@
       <v-container fluid>
         <div class="my-8 text-center">
           <h2 class="font-weight-bold mb-4 text-h4 text-md-h3 text-white">
-            Nasze Oficjalne Autoryzacje
+            Nasi Partnerzy serwisowi
           </h2>
           <p class="mx-auto text-body-1 text-grey-lighten-1" style="line-height: 1.8; max-width: 800px;">
-            Jesteśmy dumni z faktu, że spełniamy najwyższe standardy światowych marek. Posiadamy oficjalne autoryzacje, co oznacza naprawy zgodne z restrykcyjnymi wytycznymi producentów, dostęp do oryginalnej dokumentacji oraz najwyższej klasy sprzęt diagnostyczny.
+            Jesteśmy dumni z faktu, że spełniamy najwyższe standardy światowych marek. Działamy pod oficjalnym patronatem producentów pojazdów co oznacza naprawy zgodne z ich restrykcyjnymi wytycznymi oraz dostęp do oryginalnej dokumentacji oraz najwyższej klasy sprzęt diagnostyczny.
           </p>
         </div>
 
@@ -65,7 +65,7 @@
               class="align-center d-flex flex-column justify-center transition-swing"
               color="transparent"
               elevation="0"
-              height="190"
+              height="150"
               width="150"
             >
               <v-img
@@ -75,12 +75,12 @@
                 :src="getImageUrl(brand.name)"
                 width="150"
               />
-              <span
+              <!-- <span
                 class="font-weight-bold text-caption text-center text-md-subtitle-2 text-uppercase text-white"
                 style="letter-spacing: 1px; line-height: 1.3;"
               >
                 Autoryzacja<br><span class="text-red">{{ brand.name }}</span>
-              </span>
+              </span> -->
             </v-card>
           </v-col>
 
