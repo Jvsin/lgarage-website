@@ -4,8 +4,8 @@
 
 <template>
   <div class="detailing-page">
-    <v-container class="py-6 py-md-12 px-4 px-md-16" fluid>
-      <v-row class="align-center align-md-stretch mb-10 mb-md-16">
+    <v-container class="py-6 py-md-6 px-4 px-md-16" fluid>
+      <v-row class="align-center align-md-stretch mb-md-5">
         <v-col class="d-flex mt-6 mt-md-0" cols="12" md="6">
           <v-img
             class="elevation-4 mx-auto rounded-lg"
@@ -79,8 +79,8 @@
       </v-row>
     </v-container>
 
-    <v-container class="py-8 py-md-16 px-4 px-md-16" fluid>
-      <v-row class="align-center align-md-stretch mb-10 mb-md-16">
+    <v-container class="py-md-4 px-4 px-md-16" fluid>
+      <v-row class="align-center align-md-stretch mb-3 mb-md-4">
         <v-col class="d-flex flex-column justify-center" cols="12" md="4">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
             Powłoki ceramiczne
@@ -100,7 +100,6 @@
         </v-col>
 
         <v-col class="d-flex flex-column mt-6 mt-md-0 pl-md-8 overflow-hidden" cols="12" md="8">
-          
           <v-row class="h-100 d-none d-md-flex" dense>
             <v-col class="d-flex flex-column pb-4 pr-2" cols="6">
               <v-img
@@ -169,47 +168,26 @@
               />
             </v-col>
           </v-row>
-
         </v-col>
       </v-row>
     </v-container>
 
-    <v-container>
-      <v-row class="justify-center mb-10 mb-md-16">
+    <v-container fluid>
+      <v-row class="justify-center mb-5 mb-md-5">
         <v-col cols="12">
           <v-img
             class="elevation-4 mx-auto rounded-lg"
             cover
-            position="center"
-            src="https://via.placeholder.com/1600x400?text=Separator+1"
-            style="height: 250px; min-height: 250px; max-height: 400px;"
+            src="@/assets/detailing/detailing_background2.jpeg"
+            style="min-height: 250px; max-height: 700px;"
           />
         </v-col>
       </v-row>
+    </v-container>
 
+    <v-container fluid>
       <v-row class="align-center align-md-stretch mb-10 mb-md-16">
-        <v-col class="d-flex mb-6 mb-md-0 pr-md-8" cols="12" md="5" order="2" order-md="1">
-          <v-row class="h-100" dense>
-            <v-col class="pb-8 pr-2" cols="6">
-              <v-img
-                class="elevation-4 rounded-lg w-100"
-                cover
-                src="https://via.placeholder.com/500x700?text=Zdjecie+3"
-                style="height: 100%; min-height: 300px;"
-              />
-            </v-col>
-            <v-col class="pt-4 pl-2" cols="6">
-              <v-img
-                class="elevation-4 rounded-lg w-100"
-                cover
-                src="https://via.placeholder.com/500x700?text=Zdjecie+4"
-                style="height: 100%; min-height: 300px;"
-              />
-            </v-col>
-          </v-row>
-        </v-col>
-
-        <v-col class="d-flex flex-column justify-center" cols="12" md="7" order="1" order-md="2">
+        <v-col class="d-flex flex-column justify-center pr-md-8" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
             Powłoki od Ceramic Pro nie mają sobie równych.
           </h2>
@@ -240,26 +218,38 @@
             Ta nanotechnologia pozwala ceramicznym nanocząsteczkom wypełnić najmniejsze pory w lakierze, co sprawia, że powłoka Ceramic Pro jest błyszcząca, gładka i wyjątkowo hydrofobowa. Ceramic Pro radykalnie obniża napięcie powierzchniowe, zmniejszając przywieranie do powierzchni zanieczyszczeń takich jak: ptasie odchody, owady, brud, smoła i farba graffiti. Woda z łatwością usuwa brud z powierzchni, otaczając go podczas spływania z powierzchni. Nazywa się to efektem samooczyszczania.
           </p>
 
-          <div class="bg-grey-lighten-4 pa-4 rounded-lg" style="border-left: 4px solid #E53935;">
+          <div class="bg-grey-darken-4 pa-4 rounded-lg" style="border-left: 4px solid #E53935;">
             <p class="mb-0 text-body-1 text-secondary font-weight-medium" style="line-height: 1.6;">
               Po utwardzeniu powłoki Ceramic Pro można ją usunąć tylko poprzez polerowanie maszynowe. To stawia Ceramic Pro w kategorii samej w sobie, w porównaniu do selantów lub wosków, które szybko się rozkładają.
             </p>
           </div>
         </v-col>
-      </v-row>
 
-      <v-row class="justify-center mb-10 mb-md-16">
-        <v-col cols="12">
-          <v-img
-            class="elevation-4 mx-auto rounded-lg"
-            cover
-            position="center"
-            src="https://via.placeholder.com/1600x400?text=Separator+2"
-            style="height: 250px; min-height: 250px; max-height: 400px;"
-          />
+        <v-col class="d-flex mt-6 mt-md-0" cols="12" md="6">
+          <v-row class="h-100" dense>
+            <v-col class="pb-md-8 pr-md-2 mb-4 mb-md-0" cols="12" md="6">
+              <v-img
+                class="elevation-4 rounded-lg w-100"
+                cover
+                src="@/assets/detailing/ceramic_5.jpeg"
+                style="height: 100%; min-height: 300px;"
+              />
+            </v-col>
+            <v-col class="pt-md-4 pl-md-2" cols="12" md="6">
+              <v-img
+                class="elevation-4 rounded-lg w-100"
+                cover
+                src="@/assets/detailing/ceramic_6.jpeg"
+                style="height: 100%; min-height: 300px;"
+              />
+            </v-col>
+          </v-row>
         </v-col>
-      </v-row>
 
+      </v-row>
+    </v-container>
+
+    <v-container fluid>
       <v-row class="justify-center mb-10 mb-md-16">
         <v-col class="text-center" cols="12" md="10">
           <h2 class="font-weight-bold mb-6 text-h4 text-md-h3 text-secondary">
