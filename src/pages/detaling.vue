@@ -4,22 +4,24 @@
 
 <template>
   <div class="detailing-page">
-    <v-container class="py-6 py-md-6 px-4 px-md-16" fluid>
-      <v-row class="align-center align-md-stretch mb-md-5">
-        <v-col class="d-flex mt-6 mt-md-0" cols="12" md="6">
+    <v-container class="py-3 py-md-5 px-md-4" fluid>
+      <v-row>
+        <v-col cols="12">
           <v-img
-            class="elevation-4 mx-auto rounded-lg"
+            class="elevation-4 rounded-lg d-flex align-end text-white"
             cover
+            gradient="to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.95) 100%"
+            height="650"
             src="@/assets/detailing/detailing_background.jpg"
-            style="min-height: 350px; height: 100%; max-height: 550px;"
-          />
-        </v-col>
-        <v-col class="d-flex flex-column justify-center pr-md-8" cols="12" md="6">
-          <h1 class="font-weight-bold mb-4 mb-md-0 text-h4 text-md-h3 text-secondary" style="line-height: 1.4;">
-            Jako jedyna firma w województwie łódzkim posiadamy oficjalną akredytację na aplikację powłok ceramicznych
-            <span class="text-red">Ceramic Pro</span> – światowej, topowej marki w branży zabezpieczeń lakieru –
-            oraz folii ochronnych PPF Kavaca.
-          </h1>
+          >
+            <div class="w-100 text-center px-4 px-md-16 pb-6 pb-md-8">
+              <h1 class="font-weight-bold text-h6 text-md-h4 w-100 mx-auto" style="line-height: 1.4; text-shadow: 1px 1px 4px rgba(0,0,0,0.9);">
+                Jako jedyna firma w regionie posiadamy oficjalną akredytację na aplikację powłok ceramicznych
+                <span class="font-weight-bold text-red">Ceramic Pro</span> – światowej, topowej marki w branży zabezpieczeń lakieru –
+                oraz folii ochronnych PPF Kavaca.
+              </h1>
+            </div>
+          </v-img>
         </v-col>
       </v-row>
     </v-container>
@@ -27,7 +29,7 @@
     <v-container class="pb-12 pb-md-16 px-4 px-md-16" fluid>
       <div class="text-center mb-8 mb-md-12">
         <h2 class="font-weight-bold text-h4 text-md-h3 text-secondary">
-          Czym jest <span class="text-red">Ceramic Pro Kavaca</span>?
+          Czym jest <span class="text-red">Ceramic Pro</span>?
         </h2>
       </div>
 
@@ -42,7 +44,7 @@
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
-            src="@/assets/detailing/kavaca/kavaca_5.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramicpro_5.jpeg"
             style="aspect-ratio: 1;"
           />
         </v-col>
@@ -57,7 +59,7 @@
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
-            src="@/assets/detailing/kavaca/kavaca_2.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramicpro_2.jpeg"
             style="aspect-ratio: 1;"
           />
         </v-col>
@@ -72,7 +74,7 @@
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
-            src="@/assets/detailing/kavaca/kavaca_3.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramicpro_3.jpeg"
             style="aspect-ratio: 1;"
           />
         </v-col>
@@ -87,7 +89,7 @@
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
-            src="@/assets/detailing/kavaca/kavaca_4.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramicpro_4.jpeg"
             style="aspect-ratio: 1;"
           />
         </v-col>
@@ -102,7 +104,7 @@
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
-            src="@/assets/detailing/kavaca/kavaca_1.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramicpro_1.jpeg"
             style="aspect-ratio: 1;"
           />
         </v-col>
@@ -202,7 +204,7 @@
       </v-row>
     </v-container>
 
-    <!-- <v-container class="px-4 px-md-10" fluid>
+    <v-container class="px-4 px-md-10" fluid>
       <v-row class="justify-center mb-5 mb-md-5">
         <v-col cols="12">
           <v-img
@@ -213,7 +215,7 @@
           />
         </v-col>
       </v-row>
-    </v-container> -->
+    </v-container>
 
     <v-container class="px-4 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-md-8">
