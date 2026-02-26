@@ -4,13 +4,13 @@
 
 <template>
   <v-container class="py-6 py-md-10" fluid>
-    <v-row class="align-center">
-      <v-col cols="12" md="6">
+    <v-row class="align-center align-md-stretch">
+      <v-col class="d-flex" cols="12" md="6">
         <v-img
           class="elevation-4 mx-auto rounded-lg"
           cover
           src="@/assets/performance/chip_tuning.png"
-          style="min-height: 350px; height: 100%; max-height: 550px;"
+          style="min-height: 350px; height: 100%;"
         />
       </v-col>
 
@@ -28,7 +28,7 @@
         </p>
 
         <v-row class="mb-0">
-          <v-col cols="12" sm="6">
+          <v-col class="d-flex flex-column justify-center" cols="12" md="6">
             <h3 class="font-weight-bold mb-3 text-h6 text-secondary">Co zyskujesz?</h3>
             <div class="d-flex align-start mb-2">
               <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
@@ -104,8 +104,8 @@
       </v-col>
     </v-row>
 
-    <v-row class="align-center">
-      <v-col class="mt-6 mt-md-0 pl-md-8" cols="12" md="6">
+    <v-row class="align-center align-md-stretch">
+      <v-col class="d-flex flex-column justify-center mt-6 mt-md-0 pl-md-8" cols="12" md="6">
         <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
           Doposażenie elektroniczne Twojego auta
         </h2>
@@ -172,21 +172,21 @@
             </div>
           </v-col>
 
-          <!-- <v-col class="py-2 mt-2" cols="12">
+          <v-col class="py-2 mt-2" cols="12">
             <div class="d-flex align-center justify-center">
               <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-shield-check" />
-              <span class="font-weight-bold text-body-1 text-secondary">Po inne modyfikacje skontaktuj się z nami</span>
+              <span class="font-weight-bold text-body-1 text-secondary">Po inne modyfikacje skontaktuj się z nami.</span>
             </div>
-          </v-col> -->
+          </v-col>
         </v-row>
       </v-col>
 
-      <v-col cols="12" md="6">
+      <v-col class="d-flex" cols="12" md="6">
         <v-img
           class="elevation-4 mx-auto rounded-lg"
           cover
           src="@/assets/performance/start_stop.png"
-          style="min-height: 350px; height: 100%; max-height: 550px;"
+          style="min-height: 350px; height: 100%;"
         />
       </v-col>
     </v-row>
