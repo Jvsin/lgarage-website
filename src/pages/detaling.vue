@@ -32,7 +32,13 @@
       </div>
 
       <v-row class="justify-md-center px-2 flex-nowrap flex-md-wrap overflow-x-auto pb-4">
-        <v-col class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-0" cols="9" sm="5" md="2" style="max-width: 350px;">
+        <v-col
+          class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-0"
+          cols="9"
+          md="2"
+          sm="5"
+          style="max-width: 350px;"
+        >
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
@@ -41,7 +47,13 @@
           />
         </v-col>
 
-        <v-col class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-8" cols="9" sm="5" md="2" style="max-width: 350px;">
+        <v-col
+          class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-8"
+          cols="9"
+          md="2"
+          sm="5"
+          style="max-width: 350px;"
+        >
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
@@ -50,7 +62,13 @@
           />
         </v-col>
 
-        <v-col class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-16" cols="9" sm="5" md="2" style="max-width: 350px;">
+        <v-col
+          class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-16"
+          cols="9"
+          md="2"
+          sm="5"
+          style="max-width: 350px;"
+        >
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
@@ -59,7 +77,13 @@
           />
         </v-col>
 
-        <v-col class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-8" cols="9" sm="5" md="2" style="max-width: 350px;">
+        <v-col
+          class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-8"
+          cols="9"
+          md="2"
+          sm="5"
+          style="max-width: 350px;"
+        >
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
@@ -68,7 +92,13 @@
           />
         </v-col>
 
-        <v-col class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-0" cols="9" sm="5" md="2" style="max-width: 350px;">
+        <v-col
+          class="px-2 mb-6 mb-md-0 flex-grow-1 flex-shrink-0 mt-md-0"
+          cols="9"
+          md="2"
+          sm="5"
+          style="max-width: 350px;"
+        >
           <v-img
             class="elevation-4 rounded-lg mx-auto"
             cover
@@ -80,7 +110,7 @@
     </v-container>
 
     <v-container class="py-md-4 px-2 px-md-1 px-2 px-md-10" fluid>
-      <v-row class="align-center align-md-stretch mb-3 mb-md-4">
+      <v-row class="align-center align-md-stretch mb-md-4">
         <v-col class="d-flex flex-column justify-center" cols="12" md="4">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
             Powłoki ceramiczne
@@ -172,7 +202,7 @@
       </v-row>
     </v-container>
 
-    <v-container class="px-2 px-md-10" fluid>
+    <!-- <v-container class="px-4 px-md-10" fluid>
       <v-row class="justify-center mb-5 mb-md-5">
         <v-col cols="12">
           <v-img
@@ -183,9 +213,9 @@
           />
         </v-col>
       </v-row>
-    </v-container>
+    </v-container> -->
 
-    <v-container class="px-2 px-md-10" fluid>
+    <v-container class="px-4 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-md-8">
         <v-col class="d-flex flex-column justify-center pr-md-8" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
@@ -286,7 +316,7 @@
       </v-row>
     </v-container>
 
-    <!-- <v-container class="px-2 px-md-10" fluid>
+    <!-- <v-container class="px-4 px-md-10" fluid>
       <v-row class="justify-center mb-10 mb-md-16">
         <v-col cols="12">
           <v-img
@@ -301,7 +331,7 @@
     </v-container> -->
 
     <v-container fluid>
-      <v-row class="justify-center mb-10 mb-md-16">
+      <v-row class="justify-center mb-md-8">
         <v-col class="text-center" cols="12" md="10">
           <h2 class="font-weight-bold mb-6 text-h4 text-md-h3 text-secondary">
             Cennik
@@ -343,7 +373,7 @@
       </v-row>
     </v-container>
 
-    <v-container class="px-2 px-md-10" fluid>
+    <v-container class="px-4 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-8">
         <v-col class="d-flex flex-column justify-center" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
@@ -360,66 +390,93 @@
 
           <h3 class="font-weight-bold mb-4 text-h6 text-secondary">W ramach systemu:</h3>
 
-          <div class="d-flex align-start mb-3">
-            <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-lock" />
+          <div class="d-flex align-center mb-3">
+            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-lock" />
             <span class="text-body-1 text-secondary">Rejestrowana jest oficjalna gwarancja producenta</span>
           </div>
 
-          <div class="d-flex align-start mb-3">
-            <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-clipboard-text" />
+          <div class="d-flex align-center mb-3">
+            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-clipboard-text" />
             <span class="text-body-1 text-secondary">Klient ma stały dostęp do bieżących oraz archiwalnych usług detailingowych wykonanych przy jego samochodzie</span>
           </div>
 
-          <div class="d-flex align-start mb-3">
-            <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
+          <div class="d-flex align-center mb-3">
+            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-shield-check" />
             <span class="text-body-1 text-secondary">Wszystkie aplikacje są potwierdzone w systemie autoryzowanym przez markę</span>
           </div>
 
-          <div class="d-flex align-start mb-3">
-            <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-chart-line-variant" />
+          <div class="d-flex align-center mb-3">
+            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-chart-line-variant" />
             <span class="text-body-1 text-secondary">Historia zabezpieczenia zwiększa wartość pojazdu przy odsprzedaży</span>
           </div>
 
-          <div class="d-flex align-start mb-6">
-            <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
+          <div class="d-flex align-center mb-6">
+            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-check-circle" />
             <span class="text-body-1 text-secondary">Potwierdzona dokumentacja podnosi wiarygodność wykonanych prac</span>
           </div>
 
           <div class="bg-grey-darken-4 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #E53935;">
-            <p class="mb-0 text-body-1 text-grey-lighten-1" style="line-height: 1.6;">
+            <p class="mb-0 text-body-1 font-weight-bold text-grey-lighten-1" style="line-height: 1.6;">
               Dzięki temu właściciel auta posiada cyfrową historię zabezpieczenia pojazdu, co stanowi realny atut rynkowy oraz gwarancję jakości wykonania usługi.
             </p>
           </div>
         </v-col>
 
-        <v-col class="d-flex mt-6 mt-md-0 pl-md-8" cols="12" md="6">
-          <v-row class="h-100" dense>
-            <v-col class="pb-6 pr-2" cols="6">
+        <v-col class="d-flex flex-column mt-md-0 pl-md-8 overflow-hidden" cols="12" md="6">
+          <v-row class="h-100 d-none d-md-flex" dense>
+            <v-col class="d-flex flex-column pb-6 pr-2" cols="6">
               <v-img
-                class="elevation-4 mb-4 rounded-lg w-100"
+                class="elevation-4 mb-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="https://via.placeholder.com/400x400?text=Zdjecie+5"
-                style="height: 48%; min-height: 200px;"
+                src="@/assets/detailing/ceramic_7.jpeg"
+                style="min-height: 100px; max-height: 350px;"
               />
               <v-img
-                class="elevation-4 rounded-lg w-100"
+                class="elevation-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="https://via.placeholder.com/400x400?text=Zdjecie+6"
-                style="height: 48%; min-height: 200px;"
+                src="@/assets/detailing/ceramic_8.jpeg"
+                style="min-height: 100px; max-height: 350px;"
               />
             </v-col>
             <v-col class="pt-12 pl-2" cols="6">
               <v-img
-                class="elevation-4 rounded-lg w-100"
+                class="elevation-4 rounded-lg w-100 h-100"
                 cover
-                src="https://via.placeholder.com/400x800?text=Zdjecie+7"
-                style="height: 100%; min-height: 400px;"
+                src="@/assets/detailing/ceramic_9.jpeg"
+                style="min-height: 100px;"
               />
             </v-col>
           </v-row>
+
+          <v-row class="d-flex d-md-none flex-nowrap overflow-x-auto pb-4" dense>
+            <v-col class="flex-shrink-0" cols="9" sm="5">
+              <v-img
+                class="elevation-4 rounded-lg w-100"
+                cover
+                src="@/assets/detailing/ceramic_7.jpeg"
+                style="min-height: 250px;"
+              />
+            </v-col>
+            <v-col class="flex-shrink-0" cols="9" sm="5">
+              <v-img
+                class="elevation-4 rounded-lg w-100"
+                cover
+                src="@/assets/detailing/ceramic_8.jpeg"
+                style="min-height: 250px;"
+              />
+            </v-col>
+            <v-col class="flex-shrink-0" cols="9" sm="5">
+              <v-img
+                class="elevation-4 rounded-lg w-100"
+                cover
+                src="@/assets/detailing/ceramic_9.jpeg"
+                style="min-height: 250px;"
+              />
+            </v-col>
+          </v-row>
+
         </v-col>
       </v-row>
-
     </v-container>
   </div>
 </template>
