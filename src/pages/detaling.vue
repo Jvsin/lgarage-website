@@ -1,5 +1,5 @@
 <script setup>
-  // Miejsce na ewentualne importy w przyszłości
+  import PricingTable from '@/components/PricingTable.vue'
 </script>
 
 <template>
@@ -79,7 +79,7 @@
       </v-row>
     </v-container>
 
-    <v-container class="py-md-4 px-4 px-md-16" fluid>
+    <v-container class="py-md-4 px-2 px-md-1 px-2 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-3 mb-md-4">
         <v-col class="d-flex flex-column justify-center" cols="12" md="4">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
@@ -172,7 +172,7 @@
       </v-row>
     </v-container>
 
-    <v-container fluid>
+    <v-container class="px-2 px-md-10" fluid>
       <v-row class="justify-center mb-5 mb-md-5">
         <v-col cols="12">
           <v-img
@@ -185,7 +185,7 @@
       </v-row>
     </v-container>
 
-    <v-container fluid>
+    <v-container class="px-2 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-md-8">
         <v-col class="d-flex flex-column justify-center pr-md-8" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
@@ -286,7 +286,7 @@
       </v-row>
     </v-container>
 
-    <v-container>
+    <!-- <v-container class="px-2 px-md-10" fluid>
       <v-row class="justify-center mb-10 mb-md-16">
         <v-col cols="12">
           <v-img
@@ -298,7 +298,52 @@
           />
         </v-col>
       </v-row>
+    </v-container> -->
 
+    <v-container fluid>
+      <v-row class="justify-center mb-10 mb-md-16">
+        <v-col class="text-center" cols="12" md="10">
+          <h2 class="font-weight-bold mb-6 text-h4 text-md-h3 text-secondary">
+            Cennik
+          </h2>
+
+          <!-- <v-img
+            class="elevation-4 mx-auto rounded-lg w-100"
+            src="@/assets/detailing/cennik.png"
+          /> -->
+
+          <PricingTable />
+
+          <div class="bg-grey-darken-4 mt-6 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #E53935;">
+            <v-row class="text-secondary align-end">
+              <v-col cols="12" md="8">
+                <p class="mb-1 text-body-2">
+                  <span class="font-weight-bold text-white">Auta małe</span> - np. Mini, Audi A1, BMW I3
+                </p>
+                <p class="mb-1 text-body-2">
+                  <span class="font-weight-bold text-white">Auta średnie</span> - np. Audi A3-A5, BMW 1-4, Porsche 911, Mercedes A-C
+                </p>
+                <p class="mb-1 text-body-2">
+                  <span class="font-weight-bold text-white">Auta Duże</span> - Audi A6-7, Q5, BMW 5, X3-4
+                </p>
+                <p class="mb-0 text-body-2">
+                  <span class="font-weight-bold text-white">SUV/Limuzyna</span> - Range Rover, AUDI A8, Mercedes GLS
+                </p>
+              </v-col>
+
+              <v-col class="text-md-right mt-md-0" cols="12" md="4">
+                <span class="font-weight-medium text-body-1 text-red">
+                  Podane ceny są cenami netto
+                </span>
+              </v-col>
+            </v-row>
+          </div>
+
+        </v-col>
+      </v-row>
+    </v-container>
+
+    <v-container class="px-2 px-md-10" fluid>
       <v-row class="align-center align-md-stretch mb-8">
         <v-col class="d-flex flex-column justify-center" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
@@ -308,33 +353,33 @@
           <p class="mb-4 text-body-1 text-secondary" style="line-height: 1.8;">
             Oferujemy w pełni transparentny i prestiżowy system gwarancyjny oparty na oficjalnej platformie Ceramic Pro.
           </p>
-          
+
           <p class="mb-6 text-body-1 text-secondary" style="line-height: 1.8;">
             Każdy klient, który zabezpieczy swoje auto powłoką ceramiczną Ceramic Pro lub folią ochronną PPF Kavaca, otrzymuje indywidualne elektroniczne konto na platformie producenta.
           </p>
 
           <h3 class="font-weight-bold mb-4 text-h6 text-secondary">W ramach systemu:</h3>
-          
+
           <div class="d-flex align-start mb-3">
             <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-lock" />
             <span class="text-body-1 text-secondary">Rejestrowana jest oficjalna gwarancja producenta</span>
           </div>
-          
+
           <div class="d-flex align-start mb-3">
             <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-clipboard-text" />
             <span class="text-body-1 text-secondary">Klient ma stały dostęp do bieżących oraz archiwalnych usług detailingowych wykonanych przy jego samochodzie</span>
           </div>
-          
+
           <div class="d-flex align-start mb-3">
             <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-shield-check" />
             <span class="text-body-1 text-secondary">Wszystkie aplikacje są potwierdzone w systemie autoryzowanym przez markę</span>
           </div>
-          
+
           <div class="d-flex align-start mb-3">
             <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-chart-line-variant" />
             <span class="text-body-1 text-secondary">Historia zabezpieczenia zwiększa wartość pojazdu przy odsprzedaży</span>
           </div>
-          
+
           <div class="d-flex align-start mb-6">
             <v-icon class="mr-3 mt-1 flex-shrink-0" color="red" icon="mdi-check-circle" />
             <span class="text-body-1 text-secondary">Potwierdzona dokumentacja podnosi wiarygodność wykonanych prac</span>

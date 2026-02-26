@@ -19,6 +19,7 @@ declare module 'vue' {
     ContactMapSection: typeof import('./components/ContactMapSection.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     OpinionsSection: typeof import('./components/OpinionsSection.vue')['default']
+    PricingTable: typeof import('./components/PricingTable.vue')['default']
     RecentCars: typeof import('./components/RecentCars.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
