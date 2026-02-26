@@ -186,7 +186,7 @@
     </v-container>
 
     <v-container fluid>
-      <v-row class="align-center align-md-stretch mb-10 mb-md-16">
+      <v-row class="align-center align-md-stretch mb-md-8">
         <v-col class="d-flex flex-column justify-center pr-md-8" cols="12" md="6">
           <h2 class="font-weight-bold mb-4 mb-md-6 text-h4 text-md-h3 text-secondary">
             Powłoki od Ceramic Pro nie mają sobie równych.
@@ -250,26 +250,43 @@
     </v-container>
 
     <v-container fluid>
-      <v-row class="justify-center mb-10 mb-md-16">
+      <v-row class="justify-center mb-md-10">
         <v-col class="text-center" cols="12" md="10">
           <h2 class="font-weight-bold mb-6 text-h4 text-md-h3 text-secondary">
             Charakterystyka powłok ceramicznych Ceramic Pro
           </h2>
 
           <v-img
-            class="elevation-4 mx-auto mb-6 rounded-lg w-100"
-            src="https://via.placeholder.com/1200x500?text=Zdjecie+z+tabelka+charakterystyki"
-            style="max-width: 1000px;"
+            class="elevation-4 mx-auto mb-6 rounded-lg w-100 d-none d-md-block"
+            src="@/assets/detailing/ceramic_characteristic.png"
           />
 
-          <div class="bg-grey-lighten-4 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #E53935; max-width: 1000px;">
+          <v-img
+            class="elevation-4 mx-auto mb-6 rounded-lg w-100 d-block d-md-none"
+            src="@/assets/detailing/ceramic_characteristic_mobile.png"
+          />
+
+          <div class="bg-grey-darken-4 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #E53935;">
             <p class="font-weight-bold mb-0 text-body-1 text-secondary" style="line-height: 1.6;">
               Ochrona LIGHT, MEDIUM, TITANIUM wymaga corocznego przeglądu i konserwacji, które są warunkami utrzymania właściwości poszczególnych typów.
+            </p>
+            <p class="mt-2 mb-0 text-body-2 text-secondary">
+              Źródło:
+              <a
+                class="font-weight-bold text-decoration-none text-red"
+                href="https://ceramic-pro.pl/powloki-ceramiczne/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Powłoki ceramiczne - Ceramic Pro Poland
+              </a>
             </p>
           </div>
         </v-col>
       </v-row>
+    </v-container>
 
+    <v-container>
       <v-row class="justify-center mb-10 mb-md-16">
         <v-col cols="12">
           <v-img
