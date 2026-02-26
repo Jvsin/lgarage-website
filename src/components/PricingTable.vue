@@ -1,6 +1,6 @@
 <template>
   <v-table class="elevation-4 rounded-lg mx-auto bg-grey-darken-4 text-white" density="compact">
-    <thead style="background-color: #D32F2F;">
+    <thead style="background-color: #B3005F;">
       <tr>
         <th class="text-center text-white font-weight-bold text-body-2" style="width: 40%; border-right: 1px solid rgba(255, 255, 255, 0.2);">
           Rodzaj Usługi

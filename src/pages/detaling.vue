@@ -21,8 +21,8 @@
             <div class="w-100 text-center px-4 px-md-16 pb-6 pb-md-8">
               <h1 class="font-weight-bold text-h6 text-md-h4 w-100 mx-auto" style="line-height: 1.4; text-shadow: 1px 1px 4px rgba(0,0,0,0.9);">
                 Jako jedyna firma w regionie posiadamy oficjalną akredytację na aplikację powłok ceramicznych
-                <span class="font-weight-bold text-red">Ceramic Pro</span> – światowej, topowej marki w branży zabezpieczeń lakieru –
-                oraz folii ochronnych<span class="font-weight-bold text-red"> PPF Kavaca.</span>
+                <span class="font-weight-bold text-ceramic-pro-background">Ceramic Pro</span> – światowej, topowej marki w branży zabezpieczeń lakieru –
+                oraz folii ochronnych<span class="font-weight-bold text-ceramic-pro-background"> PPF Kavaca.</span>
               </h1>
             </div>
           </v-img>
@@ -46,7 +46,7 @@
               height="300"
               src="@/assets/detailing/detailing_background2.jpeg"
             >
-              <h2 class="text-h5 font-weight-bold w-100">POWŁOKI CERAMICZNE<span class="font-weight-bold text-red"> Ceramic Pro</span></h2>
+              <h2 class="text-h5 font-weight-bold w-100">POWŁOKI CERAMICZNE<span class="font-weight-bold text-ceramic-pro-background"> Ceramic Pro</span></h2>
             </v-img>
           </v-card>
         </v-col>
@@ -65,7 +65,7 @@
               height="300"
               src="@/assets/detailing/ppf_background.jpeg"
             >
-              <h2 class="text-h5 font-weight-bold w-100">FOLIE OCHRONNE <span class="font-weight-bold text-red">PPF Kavaca</span></h2>
+              <h2 class="text-h5 font-weight-bold w-100">FOLIE OCHRONNE <span class="font-weight-bold text-ceramic-pro-background">PPF Kavaca</span></h2>
             </v-img>
           </v-card>
         </v-col>
@@ -86,15 +86,14 @@
 </template>
 
 <style scoped>
-/* Styl dla kafelków z hoverem i zaznaczeniem */
 .service-card {
   transition: transform 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
 }
 .service-card:hover {
-  transform: translateY(-5px) scale(1.03); /* Uniesienie i powiększenie na hover */
+  transform: translateY(-5px) scale(1.03);
 }
 .selected-card {
-  border: 4px solid #E53935; /* Czerwona ramka dla wybranego */
+  border: 4px solid #B3005F;
 }
 </style>

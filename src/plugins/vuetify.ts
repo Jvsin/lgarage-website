@@ -50,6 +50,7 @@ export default createVuetify({
           'on-surface': '#0B0B0B',
           'on-background': '#C0C0C0',
           'red-background': '#5d0c0c',
+          'ceramic-pro-background': '#B3005F',
           'error': '#D64545',
           'info': '#2F80ED',
           'success': '#27AE60',

@@ -7,7 +7,7 @@
     <v-container class="pb-12 pb-md-16 px-4 px-md-16" fluid>
       <div class="text-center mb-8 mb-md-12">
         <h2 class="font-weight-bold text-h4 text-md-h3 text-secondary">
-          Czym jest <span class="text-red">Ceramic Pro</span>?
+          Czym jest <span class="text-ceramic-pro-background">Ceramic Pro</span>?
         </h2>
       </div>
 
@@ -228,7 +228,7 @@
             Ta nanotechnologia pozwala ceramicznym nanocząsteczkom wypełnić najmniejsze pory w lakierze, co sprawia, że powłoka Ceramic Pro jest błyszcząca, gładka i wyjątkowo hydrofobowa. Ceramic Pro radykalnie obniża napięcie powierzchniowe, zmniejszając przywieranie do powierzchni zanieczyszczeń takich jak: ptasie odchody, owady, brud, smoła i farba graffiti. Woda z łatwością usuwa brud z powierzchni, otaczając go podczas spływania z powierzchni. Nazywa się to efektem samooczyszczania.
           </p>
 
-          <div class="bg-grey-darken-4 pa-4 rounded-lg" style="border-left: 4px solid #E53935;">
+          <div class="bg-grey-darken-4 pa-4 rounded-lg" style="border-left: 4px solid #B3005F;">
             <p class="mb-0 text-body-1 text-secondary font-weight-medium" style="line-height: 1.6;">
               Po utwardzeniu powłoki Ceramic Pro można ją usunąć tylko poprzez polerowanie maszynowe. To stawia Ceramic Pro w kategorii samej w sobie, w porównaniu do selantów lub wosków, które szybko się rozkładają.
             </p>
@@ -276,14 +276,14 @@
             src="@/assets/detailing/ceramic_characteristic_mobile.png"
           />
 
-          <div class="bg-grey-darken-4 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #E53935;">
+          <div class="bg-grey-darken-4 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #B3005F;">
             <p class="font-weight-bold mb-0 text-body-1 text-secondary" style="line-height: 1.6;">
               Ochrona LIGHT, MEDIUM, TITANIUM wymaga corocznego przeglądu i konserwacji, które są warunkami utrzymania właściwości poszczególnych typów.
             </p>
             <p class="mt-2 mb-0 text-body-2 text-secondary">
               Źródło:
               <a
-                class="font-weight-bold text-decoration-none text-red"
+                class="font-weight-bold text-decoration-none text-ceramic-pro-background"
                 href="https://ceramic-pro.pl/powloki-ceramiczne/"
                 rel="noopener noreferrer"
                 target="_blank"
@@ -324,7 +324,7 @@
 
           <PricingTable />
 
-          <div class="bg-grey-darken-4 mt-6 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #E53935;">
+          <div class="bg-grey-darken-4 mt-6 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #B3005F;">
             <v-row class="text-secondary align-end">
               <v-col cols="12" md="8">
                 <p class="mb-1 text-body-2">
@@ -342,7 +342,7 @@
               </v-col>
 
               <v-col class="text-md-right mt-md-0" cols="12" md="4">
-                <span class="font-weight-medium text-body-1 text-red">
+                <span class="font-weight-medium text-body-1 text-ceramic-pro-background">
                   Podane ceny są cenami netto
                 </span>
               </v-col>
@@ -371,35 +371,35 @@
           <h3 class="font-weight-bold mb-4 text-h6 text-secondary">W ramach systemu:</h3>
 
           <div class="d-flex align-center mb-3">
-            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-lock" />
+            <v-icon class="mr-3 flex-shrink-0" color="ceramic-pro-background" icon="mdi-lock" />
             <span class="text-body-1 text-secondary">Rejestrowana jest oficjalna gwarancja producenta</span>
           </div>
 
           <div class="d-flex align-center mb-3">
-            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-clipboard-text" />
+            <v-icon class="mr-3 flex-shrink-0" color="ceramic-pro-background" icon="mdi-clipboard-text" />
             <span class="text-body-1 text-secondary">Klient ma stały dostęp do bieżących oraz archiwalnych usług detailingowych wykonanych przy jego samochodzie</span>
           </div>
 
           <div class="d-flex align-center mb-3">
-            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-shield-check" />
+            <v-icon class="mr-3 flex-shrink-0" color="ceramic-pro-background" icon="mdi-shield-check" />
             <span class="text-body-1 text-secondary">Wszystkie aplikacje są potwierdzone w systemie autoryzowanym przez markę</span>
           </div>
 
           <div class="d-flex align-center mb-3">
-            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-chart-line-variant" />
+            <v-icon class="mr-3 flex-shrink-0" color="ceramic-pro-background" icon="mdi-chart-line-variant" />
             <span class="text-body-1 text-secondary">Historia zabezpieczenia zwiększa wartość pojazdu przy odsprzedaży</span>
           </div>
 
           <div class="d-flex align-center mb-6">
-            <v-icon class="mr-3 flex-shrink-0" color="red" icon="mdi-check-circle" />
+            <v-icon class="mr-3 flex-shrink-0" color="ceramic-pro-background" icon="mdi-check-circle" />
             <span class="text-body-1 text-secondary">Potwierdzona dokumentacja podnosi wiarygodność wykonanych prac</span>
           </div>
 
-          <div class="bg-grey-darken-4 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #E53935;">
+          <div class="bg-grey-darken-4 pa-4 pa-md-6 rounded-lg" style="border-left: 4px solid #B3005F;">
             <p class="mb-0 text-body-1 font-weight-bold text-grey-lighten-1" style="line-height: 1.6;">
               Dzięki temu właściciel auta posiada cyfrową historię zabezpieczenia pojazdu, co stanowi realny atut rynkowy oraz gwarancję jakości wykonania usługi.
             </p>
-            <v-btn class="mt-2" color="red-background" href="https://ceramicpro.care/" target="_blank">Link do gwarancji</v-btn>
+            <v-btn class="mt-2" color="ceramic-pro-background" href="https://ceramicpro.care/" target="_blank">Link do gwarancji</v-btn>
           </div>
         </v-col>
 
