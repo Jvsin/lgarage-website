@@ -115,13 +115,13 @@
               <v-img
                 class="elevation-4 mb-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="@/assets/detailing/ceramic_1.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_1.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
               <v-img
                 class="elevation-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="@/assets/detailing/ceramic_3.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_3.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
             </v-col>
@@ -130,14 +130,14 @@
               <v-img
                 class="elevation-4 mb-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="@/assets/detailing/ceramic_2.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_2.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
               <v-img
                 class="elevation-4 rounded-lg w-100 flex-grow-1"
                 cover
                 position="top"
-                src="@/assets/detailing/ceramic_4.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_4.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
             </v-col>
@@ -148,7 +148,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_1.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_1.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -156,7 +156,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_2.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_2.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -164,7 +164,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_3.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_3.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -173,7 +173,7 @@
                 class="elevation-4 rounded-lg w-100"
                 cover
                 position="top"
-                src="@/assets/detailing/ceramic_4.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_4.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -188,7 +188,7 @@
           <v-img
             class="elevation-4 mx-auto rounded-lg"
             cover
-            src="@/assets/detailing/ceramic_background.jpeg"
+            src="@/assets/detailing/ceramicpro/ceramic_background.jpeg"
             style="min-height: 250px; max-height: 700px;"
           />
         </v-col>
@@ -229,7 +229,7 @@
           </p>
 
           <div class="bg-grey-darken-4 pa-4 rounded-lg" style="border-left: 4px solid #B3005F;">
-            <p class="mb-0 text-body-1 text-secondary font-weight-medium" style="line-height: 1.6;">
+            <p class="mb-0 font-weight-bold text-body-1 text-secondary font-weight-medium" style="line-height: 1.6;">
               Po utwardzeniu powłoki Ceramic Pro można ją usunąć tylko poprzez polerowanie maszynowe. To stawia Ceramic Pro w kategorii samej w sobie, w porównaniu do selantów lub wosków, które szybko się rozkładają.
             </p>
           </div>
@@ -241,7 +241,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_5.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_5.jpeg"
                 style="height: 100%; min-height: 300px;"
               />
             </v-col>
@@ -249,7 +249,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_6.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_6.jpeg"
                 style="height: 100%; min-height: 300px;"
               />
             </v-col>
@@ -268,12 +268,12 @@
 
           <v-img
             class="elevation-4 mx-auto mb-6 rounded-lg w-100 d-none d-md-block"
-            src="@/assets/detailing/ceramic_characteristic.png"
+            src="@/assets/detailing/ceramicpro/ceramic_characteristic.png"
           />
 
           <v-img
             class="elevation-4 mx-auto mb-6 rounded-lg w-100 d-block d-md-none"
-            src="@/assets/detailing/ceramic_characteristic_mobile.png"
+            src="@/assets/detailing/ceramicpro/ceramic_characteristic_mobile.png"
           />
 
           <div class="bg-grey-darken-4 mx-auto pa-4 pa-md-6 rounded-lg text-left" style="border-left: 4px solid #B3005F;">
@@ -409,13 +409,13 @@
               <v-img
                 class="elevation-4 mb-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="@/assets/detailing/ceramic_7.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_7.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
               <v-img
                 class="elevation-4 rounded-lg w-100 flex-grow-1"
                 cover
-                src="@/assets/detailing/ceramic_8.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_8.jpeg"
                 style="min-height: 100px; max-height: 350px;"
               />
             </v-col>
@@ -423,7 +423,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100 h-100"
                 cover
-                src="@/assets/detailing/ceramic_9.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_9.jpeg"
                 style="min-height: 100px;"
               />
             </v-col>
@@ -434,7 +434,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_7.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_7.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -442,7 +442,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_8.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_8.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
@@ -450,7 +450,7 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ceramic_9.jpeg"
+                src="@/assets/detailing/ceramicpro/ceramic_9.jpeg"
                 style="min-height: 250px;"
               />
             </v-col>
