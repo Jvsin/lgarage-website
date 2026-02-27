@@ -18,7 +18,6 @@ declare module 'vue' {
     CarDetailsDialog: typeof import('./components/announcements/CarDetailsDialog.vue')['default']
     CeramicPro: typeof import('./components/detaling/CeramicPro.vue')['default']
     ContactMapSection: typeof import('./components/ContactMapSection.vue')['default']
-    HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     OpinionsSection: typeof import('./components/OpinionsSection.vue')['default']
     PpfKavaca: typeof import('./components/detaling/PpfKavaca.vue')['default']
     PricingTable: typeof import('./components/detaling/PricingTable.vue')['default']
