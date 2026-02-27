@@ -2,8 +2,8 @@
   import { getAuth, signOut } from 'firebase/auth'
   import { computed, onMounted, ref, watch } from 'vue'
   import { useRouter } from 'vue-router'
-  import AddCarDialog from '@/components/AddCarDialog.vue'
-  import AnnouncementCard from '@/components/AnnouncementCard.vue'
+  import AddCarDialog from '@/components/announcements/AddCarDialog.vue'
+  import AnnouncementCard from '@/components/announcements/AnnouncementCard.vue'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
   const router = useRouter()

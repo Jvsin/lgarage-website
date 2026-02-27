@@ -1,5 +1,5 @@
 <script setup>
-  import PricingTable from '@/components/PricingTable.vue'
+  import PricingTable from '@/components/detaling/PricingTable.vue'
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup>
   import { ref } from 'vue'
-  import CeramicPro from '@/components/CeramicPro.vue'
-  import PpfKavaca from '@/components/PpfKavaca.vue'
+  import CeramicPro from '@/components/detaling/CeramicPro.vue'
+  import PpfKavaca from '@/components/detaling/PpfKavaca.vue'
 
   const selectedService = ref(null)
 </script>

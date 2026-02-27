@@ -1,6 +1,6 @@
 <script setup>
   import { onMounted, ref } from 'vue'
-  import CarDetailsDialog from '@/components/CarDetailsDialog.vue'
+  import CarDetailsDialog from '@/components/announcements/CarDetailsDialog.vue'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
   const store = useAnnouncementsStore()

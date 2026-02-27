@@ -11,17 +11,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AddCarDialog: typeof import('./components/AddCarDialog.vue')['default']
-    AnnouncementCard: typeof import('./components/AnnouncementCard.vue')['default']
+    AddCarDialog: typeof import('./components/announcements/AddCarDialog.vue')['default']
+    AnnouncementCard: typeof import('./components/announcements/AnnouncementCard.vue')['default']
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppNavbar: typeof import('./components/AppNavbar.vue')['default']
-    CarDetailsDialog: typeof import('./components/CarDetailsDialog.vue')['default']
-    CeramicPro: typeof import('./components/CeramicPro.vue')['default']
+    CarDetailsDialog: typeof import('./components/announcements/CarDetailsDialog.vue')['default']
+    CeramicPro: typeof import('./components/detaling/CeramicPro.vue')['default']
     ContactMapSection: typeof import('./components/ContactMapSection.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     OpinionsSection: typeof import('./components/OpinionsSection.vue')['default']
-    PpfKavaca: typeof import('./components/PpfKavaca.vue')['default']
-    PricingTable: typeof import('./components/PricingTable.vue')['default']
+    PpfKavaca: typeof import('./components/detaling/PpfKavaca.vue')['default']
+    PricingTable: typeof import('./components/detaling/PricingTable.vue')['default']
     RecentCars: typeof import('./components/RecentCars.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
