@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { onBeforeUnmount, onMounted, ref, nextTick } from 'vue'
+  import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
   import L from 'leaflet'
   import iconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png'
   import iconUrl from 'leaflet/dist/images/marker-icon.png'
@@ -62,7 +62,7 @@
 </script>
 
 <template>
-  <v-container class="py-8" fluid>
+  <v-container class="py-1" fluid>
     <v-row>
       <v-col cols="12" md="7">
         <v-card border class="h-100 pa-6 d-flex flex-column justify-center" elevation="4">
