@@ -1,22 +1,26 @@
 <script setup>
   import { ref } from 'vue'
+  import { useDisplay } from 'vuetify'
+  import desktopBg from '@/assets/detailing/detailing_background.png'
+  import mobileBg from '@/assets/detailing/detailing_background_mobile.png'
   import CeramicPro from '@/components/detaling/CeramicPro.vue'
   import PpfKavaca from '@/components/detaling/PpfKavaca.vue'
 
+  const { mdAndDown } = useDisplay()
   const selectedService = ref(null)
 </script>
 
 <template>
   <div class="detailing-page">
-    <v-container class="px-md-4" fluid>
-      <v-row>
+    <v-container class="pa-0 px-md-4" fluid>
+      <v-row no-gutters>
         <v-col cols="12">
           <v-img
-            class="elevation-4 rounded-lg d-flex align-end text-white"
+            class="elevation-4 d-flex align-end text-white rounded-0 rounded-md-lg"
             cover
             gradient="to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.95) 100%"
-            height="650"
-            src="@/assets/detailing/detailing_background.jpg"
+            :height="mdAndDown ? 500 : 650"
+            :src="mdAndDown ? mobileBg : desktopBg"
           >
             <div class="w-100 text-center px-4 px-md-16 pb-6 pb-md-8">
               <h1 class="font-weight-bold text-h6 text-md-h4 w-100 mx-auto" style="line-height: 1.4; text-shadow: 1px 1px 4px rgba(0,0,0,0.9);">
