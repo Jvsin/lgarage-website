@@ -46,7 +46,7 @@
       .addTo(leafletMap)
       .bindPopup(`
         <div style="text-align: center; color: #333;">
-          <b>LGarage</b><br>
+          <b>Gawrych</b><br>
           Serwis & Detailing<br>
           <a href="${googleMapsLink}" target="_blank" style="color: #E53935; text-decoration: none; font-weight: bold;">
             Nawiguj tutaj
@@ -108,7 +108,7 @@
               <div>
                 <div class="text-caption text-grey">Email</div>
                 <div class="text-body-1 font-weight-bold">
-                  <a class="text-white text-decoration-none" href="mailto:kontakt@lgarage.pl">kontakt@lgarage.pl</a>
+                  <a class="text-white text-decoration-none" href="mailto:lukisgaw@gmail.com">lukisgaw@gmail.com</a>
                 </div>
               </div>
             </div>
@@ -117,7 +117,7 @@
               <v-icon class="mr-4 mt-1" color="red" icon="mdi-clock" size="x-large" />
               <div>
                 <div class="text-caption text-grey">Godziny otwarcia</div>
-                <div class="text-body-1 font-weight-bold">Pn - Pt: 8:00 - 18:00<br>Sobota: 9:00 - 14:00</div>
+                <div class="text-body-1 font-weight-bold">Pn - Pt: 8:00 - 16:00</div>
               </div>
             </div>
 

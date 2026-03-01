@@ -57,7 +57,7 @@
                 Zobacz ofertę
               </v-btn>
             </v-col>
-            <v-col class="d-flex" cols="12" md="auto">
+            <!-- <v-col class="d-flex" cols="12" md="auto">
               <v-btn
                 color="ceramic-pro-background"
                 size="large"
@@ -66,7 +66,7 @@
               >
                 Ceramic Pro
               </v-btn>
-            </v-col>
+            </v-col> -->
             <v-col cols="12" md="auto">
               <v-btn
                 color="secondary"

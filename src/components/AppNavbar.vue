@@ -1,15 +1,15 @@
 <script setup>
-  import { useGoTo } from 'vuetify'
+  // import { useGoTo } from 'vuetify'
 
-  const goTo = useGoTo()
+  // const goTo = useGoTo()
 
-  function moveTo (id) {
-    goTo(id, {
-      duration: 800,
-      offset: -50,
-      easing: 'easeInOutCubic',
-    })
-  }
+  // function moveTo (id) {
+  //   goTo(id, {
+  //     duration: 800,
+  //     offset: -50,
+  //     easing: 'easeInOutCubic',
+  //   })
+  // }
 </script>
 
 <template>
@@ -37,7 +37,7 @@
           </v-list-item>
 
           <v-list-item link to="/detaling">
-            <v-list-item-title class="text-secondary">Detaling</v-list-item-title>
+            <v-list-item-title class="text-secondary">Detailing</v-list-item-title>
           </v-list-item>
 
           <v-list-item link to="/performance">
@@ -50,7 +50,7 @@
 
           <v-divider class="my-2 border-opacity-25" />
 
-          <v-list-item link @click="moveTo('#kontakt')">
+          <v-list-item link to="/contact">
             <v-list-item-title class="text-red-background font-weight-bold">Kontakt</v-list-item-title>
           </v-list-item>
         </v-list>

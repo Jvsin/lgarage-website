@@ -53,9 +53,9 @@
         />
         <v-list-item
           density="compact"
-          href="mailto:kontakt@lgarage.pl"
+          href="mailto:lukisgaw@gmail.com"
           prepend-icon="mdi-email"
-          title="kontakt@lgarage.pl"
+          title="lukisgaw@gmail.com"
         />
       </v-list>
 
