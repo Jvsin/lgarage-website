@@ -39,7 +39,7 @@
             max-width="500"
             src="@/assets/logo_firm_cut.png"
           />
-          <h3 class="text-body-1 text-md-body-1 mb-6 text-secondary">
+          <h3 class="text-h5 text-md-h5 mb-3 text-secondary">
             Profesjonalna obsługa twojego samochodu
           </h3>
           <h3 class="text-body-1 text-md-body-1 mb-6 font-weight-bold text-red-background">
