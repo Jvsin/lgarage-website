@@ -45,16 +45,16 @@
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ppf/ppf_1.jpeg"
-                style="min-height: 250px;"
+                src="@/assets/detailing/ppf/ppf_5.jpeg"
+                style="height: 250px; min-height: 250px;"
               />
             </v-col>
             <v-col class="flex-shrink-0" cols="9" sm="5">
               <v-img
                 class="elevation-4 rounded-lg w-100"
                 cover
-                src="@/assets/detailing/ppf/ppf_2.jpeg"
-                style="min-height: 250px;"
+                src="@/assets/detailing/ppf/ppf_4.jpeg"
+                style="height: 250px; min-height: 250px;"
               />
             </v-col>
             <v-col class="flex-shrink-0" cols="9" sm="5">
@@ -62,7 +62,7 @@
                 class="elevation-4 rounded-lg w-100"
                 cover
                 src="@/assets/detailing/ppf/ppf_3.jpeg"
-                style="min-height: 250px;"
+                style="height: 250px; min-height: 250px;"
               />
             </v-col>
           </v-row>
