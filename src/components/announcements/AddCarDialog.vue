@@ -20,6 +20,7 @@
 
   const newCar = ref({
     title: '',
+    vin: '',
     year: '',
     price: '',
     mileage: '',
@@ -63,6 +64,7 @@
     if (isOpen && props.car) {
       newCar.value = {
         title: props.car.title || '',
+        vin: props.car.vin || '',
         year: props.car.year || '',
         price: props.car.price || '',
         mileage: props.car.mileage || '',
@@ -83,6 +85,7 @@
     if (!isOpen) {
       newCar.value = {
         title: '',
+        vin: '',
         year: '',
         price: '',
         mileage: '',
@@ -142,6 +145,12 @@
             />
           </v-col>
         </v-row>
+
+        <v-text-field
+          v-model="newCar.vin"
+          label="VIN"
+          variant="outlined"
+        />
 
         <v-textarea
           v-model="newCar.description"

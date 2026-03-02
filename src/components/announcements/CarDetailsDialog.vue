@@ -168,6 +168,11 @@
         <h3 class="text-h6 font-weight-bold my-2">Informacje:</h3>
         <v-row class="text-body-1">
           <v-col class="d-flex align-center" cols="12" sm="6">
+            <v-icon class="mr-3" color="red" icon="mdi-barcode" />
+            <div><span class="text-grey-lighten-1">VIN:</span> <strong>{{ car.vin || '-' }}</strong></div>
+          </v-col>
+
+          <v-col class="d-flex align-center" cols="12" sm="6">
             <v-icon class="mr-3" color="red" icon="mdi-earth" />
             <div><span class="text-grey-lighten-1">Pochodzenie:</span> <strong>{{ car.origin || '-' }}</strong></div>
           </v-col>

@@ -20,6 +20,7 @@ import { db, storage } from '@/firebase'
 
 type CarInput = {
   title: string
+  vin?: string
   year: string | number
   price: string | number
   mileage: string | number
@@ -38,6 +39,7 @@ type CarInput = {
 type CarRecord = {
   id: string
   title?: string
+  vin?: string
   year?: number | string
   price?: number | string
   mileage?: string | number
@@ -133,6 +135,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     try {
       const carData = {
         title: formData.title,
+        vin: formData.vin || '',
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
         mileage: toNumberOrNull(formData.mileage),
@@ -194,6 +197,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
 
       const updateData = {
         title: formData.title,
+        vin: formData.vin || '',
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
         mileage: toNumberOrNull(formData.mileage),
