@@ -104,7 +104,9 @@
             <div>
               <div class="text-caption">Telefon</div>
               <div class="text-body-1">
-                <span class="text-decoration-none">+48 730 995 828 | +48 796 073 929</span>
+                <a class="text-decoration-none" href="tel:+48730995828">+48 730 995 828</a>
+                |
+                <a class="text-decoration-none" href="tel:+48796073929">+48 796 073 929</a>
               </div>
             </div>
           </div>
