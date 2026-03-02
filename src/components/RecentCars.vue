@@ -49,7 +49,7 @@
       >
         <v-card class="h-100 d-flex flex-column" rounded="lg" variant="outlined">
           <v-img
-            class="bg-grey-lighten-2 align-end"
+            class="bg-grey-darken-5 align-end"
             cover
             height="200"
             max-height="200"
@@ -91,8 +91,12 @@
     </v-row>
 
     <div class="text-center mt-2">
-      <v-btn color="red-background" size="large" to="/announcements">
+      <v-btn v-if="allCarsNumber > 3" color="red-background" size="large" to="/announcements">
         {{ 'Więcej ogłoszeń (+' + (allCarsNumber - recentCars.length) + ')' }}
+      </v-btn>
+
+      <v-btn v-else color="red-background" size="large" to="/announcements">
+        {{ 'Zobacz ogłoszenia' }}
       </v-btn>
     </div>
   </v-container>

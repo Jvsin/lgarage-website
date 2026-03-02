@@ -18,6 +18,8 @@
 
   const imageIndex = ref(0)
 
+  const preloadedImages = ref(new Set())
+
   const imageList = computed(() => {
     if (!props.car) return []
     if (props.car.images?.length) return props.car.images
@@ -39,9 +41,22 @@
     imageIndex.value = (imageIndex.value - 1 + imageList.value.length) % imageList.value.length
   }
 
-  watch(() => props.car, () => {
+  function preloadImages () {
+    for (const url of imageList.value) {
+      if (!preloadedImages.value.has(url)) {
+        const img = new Image()
+        img.src = url
+        preloadedImages.value.add(url)
+      }
+    }
+  }
+
+  watch(() => props.car, newCar => {
     imageIndex.value = 0
-  })
+    if (newCar) {
+      preloadImages()
+    }
+  }, { immediate: true })
 </script>
 
 <template>
@@ -53,27 +68,30 @@
       rounded="lg"
       theme="dark"
     >
-      <!-- <v-toolbar color="transparent" flat>
-        <v-toolbar-title class="text-h5 font-weight-bold text-white">
-          {{ car.title }}
-        </v-toolbar-title>
-        <v-spacer />
-        <v-btn class="text-white" icon="mdi-close" variant="text" @click="dialog = false" />
-      </v-toolbar> -->
-
       <v-img
-        class="bg-grey-lighten-2 align-end"
+        class="bg-grey-darken-5 align-end"
         cover
         height="400"
         :src="activeImage"
       >
+        <template #placeholder>
+          <div class="d-flex align-center justify-center fill-height">
+            <v-progress-circular
+              color="red"
+              indeterminate
+              size="60"
+              width="5"
+            />
+          </div>
+        </template>
+
         <v-btn
           v-if="hasMultipleImages"
           class="position-absolute"
           color="black"
           icon="mdi-chevron-left"
           size="small"
-          style="left: 12px; top: 50%; transform: translateY(-50%);"
+          style="left: 12px; top: 50%; transform: translateY(-50%); z-index: 10;"
           variant="flat"
           @click="showPreviousImage"
         />
@@ -83,11 +101,11 @@
           color="black"
           icon="mdi-chevron-right"
           size="small"
-          style="right: 12px; top: 50%; transform: translateY(-50%);"
+          style="right: 12px; top: 50%; transform: translateY(-50%); z-index: 10;"
           variant="flat"
           @click="showNextImage"
         />
-        <div class="w-100 px-4 pb-4 pt-15" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
+        <div class="w-100 px-4 pb-4 pt-15 position-relative" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%); z-index: 5;">
           <h2 class="text-h3 font-weight-bold text-white">
             {{ car.title }}
           </h2>
@@ -109,7 +127,7 @@
               </v-chip>
 
               <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
-                Przebieg: {{ car.mileage.toLocaleString() }} km
+                Przebieg: {{ car.mileage?.toLocaleString() }} km
               </v-chip>
             </v-col>
           </v-row>

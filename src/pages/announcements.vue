@@ -44,12 +44,23 @@
       >
         <v-card class="h-100 d-flex flex-column" rounded="lg" variant="outlined">
           <v-img
-            class="bg-grey-lighten-2 align-end"
+            class="bg-grey-darken-4 align-end"
             cover
             height="250"
             max-height="250"
             :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
           >
+            <template #placeholder>
+              <div class="d-flex align-center justify-center fill-height">
+                <v-progress-circular
+                  color="red"
+                  indeterminate
+                  size="50"
+                  width="4"
+                />
+              </div>
+            </template>
+
             <div class="w-100 px-4 pb-2 pt-12" style="background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);">
               <h2 class="text-h5 font-weight-bold text-white mb-0">
                 {{ car.title }}
@@ -71,10 +82,9 @@
                 </v-chip>
 
                 <v-chip class="font-weight-bold text-white" color="white" variant="outlined">
-                  Przebieg: {{ car.mileage.toLocaleString() }} km
+                  Przebieg: {{ car.mileage?.toLocaleString() }} km
                 </v-chip>
               </div>
-
             </div>
           </v-card-subtitle>
 
@@ -88,11 +98,7 @@
             >
               Zobacz szczegóły
             </v-btn>
-
           </v-card-actions>
-          <!-- <v-card-text class="text-secondary text-body-1">
-            {{ car.description }}
-          </v-card-text> -->
         </v-card>
       </v-col>
     </v-row>

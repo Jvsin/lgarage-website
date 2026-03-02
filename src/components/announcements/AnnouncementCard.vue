@@ -20,7 +20,7 @@
 <template>
   <v-card class="h-100 d-flex flex-column">
     <v-img
-      class="bg-grey-lighten-2"
+      class="bg-grey-darken-5"
       cover
       height="200"
       :src="car.images?.[0] || car.image || 'https://via.placeholder.com/300?text=Brak+zdjęcia'"
