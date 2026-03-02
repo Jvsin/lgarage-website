@@ -104,9 +104,9 @@
             <div>
               <div class="text-caption">Telefon</div>
               <div class="text-body-1">
-                <a class="text-decoration-none" href="tel:+48730995828">+48 730 995 828</a>
+                <a class="phone-link text-decoration-none" href="tel:+48730995828">+48 730 995 828</a>
                 |
-                <a class="text-decoration-none" href="tel:+48796073929">+48 796 073 929</a>
+                <a class="phone-link text-decoration-none" href="tel:+48796073929">+48 796 073 929</a>
               </div>
             </div>
           </div>
@@ -175,6 +175,13 @@
   min-height: 450px;
   width: 100%;
   z-index: 1;
+}
+
+.phone-link,
+.phone-link:visited,
+.phone-link:hover,
+.phone-link:active {
+  color: inherit;
 }
 
 @media (max-width: 960px) {
