@@ -41,7 +41,7 @@
           </v-list-item>
 
           <v-list-item link to="/performance">
-            <v-list-item-title class="text-secondary">Performence</v-list-item-title>
+            <v-list-item-title class="text-secondary">Performance</v-list-item-title>
           </v-list-item>
 
           <v-list-item link to="/announcements">

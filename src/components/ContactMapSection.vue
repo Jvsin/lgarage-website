@@ -87,7 +87,7 @@
             </v-avatar>
             <div>
               <div class="text-caption">Adres</div>
-              <div class="text-body-1 font-weight-medium">ul. Jesionowa 11, 95-015 Głowno</div>
+              <div class="text-body-1 font-weight-medium">ul. Okrężna 4, 95-015 Głowno</div>
             </div>
           </div>
 

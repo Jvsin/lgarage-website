@@ -88,7 +88,7 @@
               <v-icon class="mr-4" color="red" icon="mdi-map-marker" size="x-large" />
               <div>
                 <div class="text-caption text-grey">Adres</div>
-                <div class="text-body-1 font-weight-bold">ul. Jesionowa 11<br>95-015 Głowno</div>
+                <div class="text-body-1 font-weight-bold">ul. Okrężna 4<br>95-015 Głowno</div>
               </div>
             </div>
 
