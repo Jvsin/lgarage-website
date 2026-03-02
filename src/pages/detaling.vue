@@ -75,15 +75,10 @@
         </v-col>
       </v-row>
 
-      <v-window v-if="selectedService" v-model="selectedService" class="mt-8">
-        <v-window-item value="ceramic">
-          <CeramicPro />
-        </v-window-item>
-
-        <v-window-item value="kavaca">
-          <PpfKavaca />
-        </v-window-item>
-      </v-window>
+      <div v-if="selectedService" class="mt-8">
+        <CeramicPro v-if="selectedService === 'ceramic'" />
+        <PpfKavaca v-else-if="selectedService === 'kavaca'" />
+      </div>
     </v-container>
 
   </div>
