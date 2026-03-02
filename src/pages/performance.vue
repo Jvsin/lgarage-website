@@ -181,12 +181,17 @@
         </v-row>
       </v-col>
 
-      <v-col class="d-flex" cols="12" md="6">
+      <v-col
+        class="pa-0 pa-md-3 d-flex"
+        cols="12"
+        md="6"
+      >
         <v-img
-          class="elevation-4 mx-auto rounded-lg"
-          cover
+          class="elevation-4 rounded-0 rounded-md-lg"
+          contain
           src="@/assets/performance/start_stop.png"
-          style="min-height: 350px; height: 100%;"
+          style="min-height: 300px;"
+          width="100%"
         />
       </v-col>
     </v-row>
