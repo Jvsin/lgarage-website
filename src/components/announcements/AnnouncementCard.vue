@@ -6,7 +6,7 @@
     },
   })
 
-  const emit = defineEmits(['edit', 'delete'])
+  const emit = defineEmits(['edit', 'delete', 'toggle-active'])
 
   function handleEdit () {
     emit('edit', props.car)
@@ -14,6 +14,13 @@
 
   function handleDelete () {
     emit('delete', props.car)
+  }
+
+  function handleToggleActive (value) {
+    emit('toggle-active', {
+      car: props.car,
+      isActive: Boolean(value),
+    })
   }
 </script>
 
@@ -45,6 +52,13 @@
 
     <v-divider />
     <v-card-actions>
+      <v-checkbox-btn
+        color="success"
+        :model-value="car.isActive ?? true"
+        @update:model-value="handleToggleActive"
+      />
+      <span class="text-body-2">Aktywne</span>
+
       <v-btn color="info" prepend-icon="mdi-pencil" variant="text" @click="handleEdit">
         Edytuj
       </v-btn>

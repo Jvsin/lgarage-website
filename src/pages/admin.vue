@@ -77,6 +77,16 @@
     dialogOpen.value = true
   }
 
+  async function handleToggleActive ({ car, isActive }) {
+    if (!car?.id) return
+
+    try {
+      await announcementsStore.setCarActive(car.id, isActive)
+    } catch (error) {
+      console.error('Blad zmiany aktywnosci', error)
+    }
+  }
+
   function openConfirmDelete (car) {
     carToDelete.value = car
     confirmDelete.value = true
@@ -150,6 +160,7 @@
           :car="car"
           @delete="openConfirmDelete"
           @edit="openEditDialog"
+          @toggle-active="handleToggleActive"
         />
       </v-col>
     </v-row>

@@ -21,6 +21,7 @@
   const newCar = ref({
     title: '',
     vin: '',
+    isActive: true,
     year: '',
     price: '',
     mileage: '',
@@ -65,6 +66,7 @@
       newCar.value = {
         title: props.car.title || '',
         vin: props.car.vin || '',
+        isActive: props.car.isActive ?? true,
         year: props.car.year || '',
         price: props.car.price || '',
         mileage: props.car.mileage || '',
@@ -86,6 +88,7 @@
       newCar.value = {
         title: '',
         vin: '',
+        isActive: true,
         year: '',
         price: '',
         mileage: '',
@@ -150,6 +153,13 @@
           v-model="newCar.vin"
           label="VIN"
           variant="outlined"
+        />
+
+        <v-checkbox
+          v-model="newCar.isActive"
+          color="success"
+          hide-details
+          label="Aktywne ogłoszenie"
         />
 
         <v-textarea

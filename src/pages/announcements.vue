@@ -1,5 +1,5 @@
 <script setup>
-  import { onMounted, ref } from 'vue'
+  import { computed, onMounted, ref } from 'vue'
   import CarDetailsDialog from '@/components/announcements/CarDetailsDialog.vue'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
@@ -7,6 +7,8 @@
 
   const isDialogOpen = ref(false)
   const selectedCar = ref(null)
+
+  const activeCars = computed(() => store.cars.filter(car => car.isActive === true))
 
   function openCarDetails (car) {
     selectedCar.value = car
@@ -30,13 +32,13 @@
       <v-progress-circular color="primary" indeterminate size="64" />
     </div>
 
-    <v-alert v-else-if="store.cars.length === 0" type="info" variant="tonal">
+    <v-alert v-else-if="activeCars.length === 0" type="info" variant="tonal">
       Aktualnie brak pojazdów na sprzedaż.
     </v-alert>
 
     <v-row v-else>
       <v-col
-        v-for="car in store.cars"
+        v-for="car in activeCars"
         :key="car.id"
         cols="12"
         md="4"

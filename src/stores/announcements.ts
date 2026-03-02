@@ -21,6 +21,7 @@ import { db, storage } from '@/firebase'
 type CarInput = {
   title: string
   vin?: string
+  isActive?: boolean
   year: string | number
   price: string | number
   mileage: string | number
@@ -40,6 +41,7 @@ type CarRecord = {
   id: string
   title?: string
   vin?: string
+  isActive?: boolean
   year?: number | string
   price?: number | string
   mileage?: string | number
@@ -120,6 +122,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
 
       cars.value = querySnapshot.docs.map(docSnapshot => ({
         id: docSnapshot.id,
+        isActive: docSnapshot.data().isActive ?? true,
         ...docSnapshot.data(),
       })) as CarRecord[]
     } catch (error) {
@@ -136,6 +139,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
       const carData = {
         title: formData.title,
         vin: formData.vin || '',
+        isActive: formData.isActive ?? true,
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
         mileage: toNumberOrNull(formData.mileage),
@@ -198,6 +202,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
       const updateData = {
         title: formData.title,
         vin: formData.vin || '',
+        isActive: formData.isActive ?? true,
         year: toNumberOrNull(formData.year),
         price: toNumberOrNull(formData.price),
         mileage: toNumberOrNull(formData.mileage),
@@ -242,6 +247,24 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     }
   }
 
+  async function setCarActive (carId: string, isActive: boolean) {
+    savingCar.value = true
+
+    try {
+      await updateDoc(doc(db, 'cars', carId), {
+        isActive,
+        updatedAt: new Date(),
+      })
+
+      cars.value = cars.value.map(car => (car.id === carId ? { ...car, isActive } : car))
+    } catch (error) {
+      console.error('Blad zmiany statusu ogloszenia', error)
+      throw error
+    } finally {
+      savingCar.value = false
+    }
+  }
+
   return {
     cars,
     loadingCars,
@@ -250,6 +273,7 @@ export const useAnnouncementsStore = defineStore('announcements', () => {
     fetchCars,
     addCar,
     updateCar,
+    setCarActive,
     deleteCar,
   }
 })

@@ -1,11 +1,25 @@
 <script setup>
   import { computed, onMounted } from 'vue'
+  import { useDisplay } from 'vuetify'
   import { useAnnouncementsStore } from '@/stores/announcements'
 
   const store = useAnnouncementsStore()
+  const { smAndUp } = useDisplay()
 
-  const recentCars = computed(() => store.cars.slice(0, 3))
-  const allCarsNumber = computed(() => (store.cars).length)
+  const activeCars = computed(() => store.cars.filter(car => car.isActive === true))
+  const recentCars = computed(() => activeCars.value.slice(0, 3))
+  const allCarsNumber = computed(() => activeCars.value.length)
+  const cardsRowClass = computed(() => {
+    if (!smAndUp.value) {
+      return recentCars.value.length === 1
+        ? 'justify-center flex-wrap'
+        : 'flex-nowrap overflow-x-auto'
+    }
+
+    return recentCars.value.length < 3
+      ? 'justify-center flex-wrap'
+      : 'flex-nowrap flex-lg-wrap overflow-x-auto'
+  })
 
   onMounted(() => {
     store.fetchCars()
@@ -37,7 +51,7 @@
       Brak aktualnych ogłoszeń.
     </v-alert>
 
-    <v-row v-else class="flex-nowrap flex-lg-wrap overflow-x-auto pb-4" dense>
+    <v-row v-else :class="[cardsRowClass, 'pb-4']" dense>
       <v-col
         v-for="car in recentCars"
         :key="car.id"
