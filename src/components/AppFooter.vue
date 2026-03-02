@@ -40,9 +40,13 @@
       </div>
 
       <div class="text-body-2 mt-4 mt-md-0 text-center">
-        <div class="mb-1">+48 730 995 828 | +48 796 073 929</div>
+        <div class="mb-1">
+          <a class="footer-link text-decoration-none" href="tel:+48730995828">+48 730 995 828</a>
+          |
+          <a class="footer-link text-decoration-none" href="tel:+48796073929">+48 796 073 929</a>
+        </div>
         <div class="mb-1">lukisgaw@gmail.com</div>
-        <div>Pon-Pt 08:00-18:00 | Sob 09:00-14:00</div>
+        <div>Pon-Pt 08:00-16:00</div>
       </div>
 
     </v-container>
