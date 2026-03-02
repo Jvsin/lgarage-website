@@ -47,6 +47,14 @@
         </div>
         <div class="mb-1">lukisgaw@gmail.com</div>
         <div>Pon-Pt 08:00-16:00</div>
+        <a
+          class="footer-link text-decoration-none text-caption mt-2 d-inline-block"
+          href="https://github.com/Jvsin"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          created by Piotr Jasiński
+        </a>
       </div>
 
     </v-container>
