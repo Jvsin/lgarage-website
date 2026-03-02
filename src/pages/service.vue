@@ -1,5 +1,6 @@
 <script setup>
   import { computed, ref } from 'vue'
+  import { useDisplay } from 'vuetify'
 
   function getImageUrl (name) {
     const fileName = name.toLowerCase()
@@ -32,6 +33,8 @@
       brand.name.toLowerCase().includes(query),
     )
   })
+
+  const { xs } = useDisplay()
 </script>
 
 <template>
@@ -268,11 +271,11 @@
     </v-container>
 
     <v-img
-      class="align-center d-flex"
+      class="d-flex align-start align-sm-center"
       cover
       gradient="to bottom, rgba(0,0,0,0.85), rgba(0,0,0,0.9)"
-      max-height="800"
-      min-height="600"
+      :max-height="xs ? undefined : 800"
+      :min-height="xs ? 760 : 600"
       src="@/assets/service/service_garage.jpg"
     >
       <v-container class="px-4 py-10 py-md-16 text-center" style="max-width: 900px;">
